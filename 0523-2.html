@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width , initial-scale=1.0">
+	<style>
+		body > * {
+			max-width: 500px;
+			margin: 0 auto;
+		}
+		h1 {
+			font-size: 1.5rem;
+			border: 3px dashed skyblue;
+		}
+
+		h1::before {
+			content: "★";
+		}
+		h1:hover:before{
+			color: red;
+		}
+		h1::after {
+			content: "🎀";
+		}
+
+		p {
+			border: 1px solid red;
+		}
+
+		.first::before {
+			content: "😍 ";
+		}
+
+		.second::before {
+			content: "🛫";
+		}
+
+		p::after {
+			content: " 👑";
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>가상선택자 연습중입니다</h1>
+
+	<p class="first">My name is Donald</p>
+	<p class="second">I live in Ducksburg</p>
+
+</body>
+
+</html>

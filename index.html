@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8교시 과제-1</title>
+    <style>
+        #wrap {
+            /* height: 700px; */
+            min-height: 70vh; /*최소높이 70%*/
+            background-color: rgb(99, 141, 255);
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        #layout1 {
+            flex-basis: 250px;
+            width: 100px;
+            box-sizing: border-box;
+        }
+
+        form {
+            max-width: 270px;
+        }
+
+        [type="submit"] {
+            display: block;
+            margin: 0 auto;
+        }
+
+        main {
+            flex-basis: 250px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            height: 300px;
+            width: 500px;
+            padding: 60px;
+        }
+
+        @media(max-width:500px) {
+            #wrap {
+                flex-direction: column;
+            }
+
+            #wrap>* {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="layout1">
+            <h2>이름 입력</h2>
+            <form class="first" action="#">
+                <label for="fname">First name:</label>
+                <input type="text" id="aaa" name="fname" value="John"><br>
+                <label for="lname">Last name:</label>
+                <input type="text" id="bbb" name="lname" value="Doe"><br><br>
+                <input type="submit"><br><br>
+            </form>
+            <hr>
+            <input type="checkbox" id="m" name="hobby">
+            <label for="m">등산</label>
+            <input type="checkbox" id="f" name="hobby">
+            <label for="f">골프</label>
+            <input type="checkbox" id="s" name="hobby">
+            <label for="s">수영</label><br><br>
+
+            <input type="checkbox" value="c" name="hobby">클라이밍
+            <br><br>
+            <input type="date"><br><br>
+            <input type="color"><br><br>
+            <input type="email"><br><br>
+            <input type="file"><br><br>
+            <input type="hidden"><br><br>
+            <input type="week"><br><br>
+            <input type="url"><br><br>
+            <input type="time"><br><br>
+            <input type="tel"><br><br>
+            <input type="image" src="imges/start_btn.jpg" width="150"><br><br>
+            <form action="#">
+               
+                <input type="tell">
+                <input type="submit">
+           
+            </form><br><br>
+    
+        </div>
+        <main>
+            <hr>
+            <h2>이메일 수신 동의</h2>
+            <form class="second" action="#">
+                <!-- radio -->
+                <input type="radio" id="yes" name="group" checked>
+                <label for="yes">예</label>
+                <input type="radio" id="no" name="group">
+                <label for="no">아니오</label></br></br>
+                <!-- submit -->
+                <input type="submit" value="확인">
+            </form>
+        </main>
+    </div>
+
+</body>
+<script language = "javascript">
+
+    </script>
+</html>

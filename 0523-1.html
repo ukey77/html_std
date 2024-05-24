@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미션 복습하기</title>
+    <style>
+        #layout01 {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* header */
+        header {
+            background: repeating-linear-gradient(orange, rgb(255, 60, 0), gold);
+            padding: 20px;
+            text-align: center;
+            transition: 0.5s;
+        }
+
+        header:hover {
+            background: linear-gradient(to top, orange, gold);
+            transform: rotate(-3deg);
+        }
+
+        header h1 {
+            margin: 0;
+        }
+        header:hover footer h3 {
+            color: RED;
+        }
+        /* nav */
+        nav{
+            height: 300px;
+            margin: 20px auto;
+            background: radial-gradient(circle,rgb(198, 154, 255), rgb(255, 242, 253), skyblue);
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        nav:hover{
+            background: radial-gradient(circle,pink, rgb(255, 240, 154), rgb(233, 195, 255), rgb(255, 240, 154),pink);
+            transform: rotate(10deg);
+        }
+        /* layout2 */
+        #layout2 {
+            display: flex;
+        }
+
+        #layout2 p {
+            margin: 0;
+        }
+
+        #layout2 p::first-letter {
+            font-size: 2rem;
+            border: 2px solid tomato;
+            background: rgba(0, 0, 255, .4);
+            padding: 0 10px;
+            border-radius: 10px;
+        }
+
+        #layout2 p:hover::first-letter {
+            background: tomato;
+        }
+       /* main */
+        main {
+            background-color: chartreuse;
+            padding: 20px;
+            flex: 2;
+        }
+
+        main h2 {
+            margin: 0;
+        }
+
+        /* aside */
+        aside {
+            background: pink;
+            padding: 20px;
+            flex: 1;
+        }
+
+        aside h3 {
+            margin: 0;
+        }
+        /* footer */
+        footer {
+            background: #ddd;
+            padding: 20px;
+        }
+
+        footer h3 {
+            margin: 0;
+            text-align: center;
+
+        }
+
+        /* 반응형 부분(작은 기계 장치에 적용되는 최대 넓이는 0~550 pixcel 크기) */
+        @media(max-width: 550px) {
+            #layout2 {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="layout01">
+        <header>
+            <h1>상단</h1>
+        </header>
+        <nav>
+
+        </nav>
+        <section id="layout2">
+            <main>
+                <h2>메인영역</h2>
+                <p>비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 초병·초소·유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다. 다만, 사형을
+                    선고한 경우에는 그러하지 아니하다.</p>
+
+                <p>대한민국은 국제평화의 유지에 노력하고 침략적 전쟁을 부인한다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 감사원은 원장을 포함한 5인 이상 11인 이하의
+                    감사위원으로 구성한다.</p>
+
+                <p>근로자는 근로조건의 향상을 위하여 자주적인 단결권·단체교섭권 및 단체행동권을 가진다. 모든 국민은 소급입법에 의하여 참정권의 제한을 받거나 재산권을 박탈당하지 아니한다.</p>
+            </main>
+            <aside>
+                <h3>부가영역</h3>
+                <p>헌법개정안은 국회가 의결한 후 30일 이내에 국민투표에 붙여 국회의원선거권자 과반수의 투표와 투표자 과반수의 찬성을 얻어야 한다. 모든 국민은 법률이 정하는 바에 의하여 국가기관에
+                    문서로 청원할 권리를 가진다.</p>
+
+                <p>모든 국민은 주거의 자유를 침해받지 아니한다. 주거에 대한 압수나 수색을 할 때에는 검사의 신청에 의하여 법관이 발부한 영장을 제시하여야 한다. 대통령은 법률안의 일부에 대하여 또는
+                    법률안을 수정하여 재의를 요구할 수 없다.</p>
+            </aside>
+        </section>
+        <footer>
+            <h3>하단정보</h3>
+        </footer>
+    </div>
+</body>
+
+</html>

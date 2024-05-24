@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample04. Page Layout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dokdo&display=swap" rel="stylesheet">
+
+<style>
+.dokdo-regular {
+  font-family: "Dokdo", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {padding:0; margin:0; font-family: "Dokdo", system-ui;}
+html,body {font:9pt '나눔고딕'; max-width: 900px; margin: auto;}
+body{border: 3px dashed red;}
+h1,h2 {font-size:1rem;}
+main h1 {display:none;}
+/* 상단 */
+header {height:50pt; background:skyblue;}
+header:hover{background-color: aqua; transition: 1s;}
+#main_aside{border: 2px dashed blue;}
+/* 일반정보 */
+section {height:200pt; background: linear-gradient(50deg, green,yellow) }
+section:hover{background: linear-gradient(-50deg, green,yellow);}
+section:hover h2{display: none;}
+/* 기사정보*/
+article {height:100pt; background:orange;}
+article:hover{background-color: rgb(255, 222, 113);}
+article:hover h2{display: none;}
+/* 부가정보 */
+aside {height:50pt; background:gray; transition: 0.5s;}
+aside:hover{background: linear-gradient(-50deg, rgb(57, 59, 57),rgb(240, 240, 240));}
+aside:hover h2{opacity: 0;}
+/* 하단 */
+footer {height:30pt; background:brown; transition: 0.5s;}
+footer:hover{transform: rotate(-2deg);}
+
+b{color: red; font-weight: normal; border: 1px dotted blue; padding: 20px; border-radius: 10px; background-color: rgba(245, 196, 204, 0.7); display: inline-block; transition: 0.5s;}
+b:hover{transform: rotate(15deg);}
+@media (min-width:600pt) {
+ #main_aside {display:flex; height:300pt;} 
+ main {flex-grow:3;} 
+ aside { flex-grow:1; height:100%;}
+}
+</style>
+</head>
+<body>
+<header><h1>상단</h1></header>
+<div id="main_aside">
+ <main>
+ <h1>메인영역</h1>
+ <section><h2>일반 <b>정보</b></h2></section>
+ <article><h2>기사 <b>정보</b></h2></article>
+ </main>
+<aside><h2>부가 <b>정보</b></h2></aside>
+</div>
+<footer><h1>하단</h1></footer>
+</body>
+</html>

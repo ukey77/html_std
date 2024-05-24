@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라인컴퓨터아트학원</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Hahmlet:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        #layout01 {
+            border: 3px solid pink;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: skyblue;
+            padding: 20px;
+            transition: 0.5s;
+        }
+
+        header:hover {
+            background: tomato;
+        }
+
+        h1 {
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        /* nav */
+        nav ul {
+            display: flex;
+            list-style-position: inside;
+            padding: 50px 0;
+            max-width: 700px;
+            margin: 0 auto;
+            /* list-style-type: circle; */
+            list-style: none;
+        }
+
+        nav li {
+            flex: 1;
+            text-align: center;
+            transition: 0.5s;
+        }
+
+        nav li:hover {
+            transform: scale(1.5);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 500;  /*100~900*/
+            font-style: normal;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        /* layout02 */
+        #layout02 {
+            display: flex;
+        }
+
+        main {
+            flex: 2.5;
+        }
+
+        /* section */
+        main section {
+            background: aqua;
+            transition: 0.5s;
+        }
+
+        main section:hover {
+            transform: rotate(1deg);
+        }
+
+        /* article */
+        main article {
+            background: gold;
+        }
+
+        aside {
+            background: #ddd;
+            flex: 1;
+            transition: 2s;
+        }
+
+        aside:hover {
+            background: rgb(138, 255, 102);
+        }
+
+        /* 작은 기계 장치에 대한 설정 (최대넓이 550px)*/
+        @media(max-width:550px) {
+            #layout02 {
+                flex-direction: column;
+            }
+            nav li:nth-child(4), nav li:nth-child(5){
+                display: none;
+            }
+          
+        }
+    </style>
+</head>
+
+<body>
+    <div id="layout01">
+        <header>
+            <h1>마크업 첫걸음</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
+                <li><a href="#">메뉴4</a></li>
+                <li><a href="#">메뉴5</a></li>
+            </ul>
+        </nav>
+
+        <div id="layout02">
+            <main>
+                <section>
+                    <h2>정보구역-1</h2>
+                </section>
+                <article>
+                    <h2>정보구역-2</h2>
+                </article>
+            </main>
+            <aside>
+                <h3>부가정보</h3>
+            </aside>
+        </div>
+        <footer>
+            하단구역
+        </footer>
+    </div>
+</body>
+
+</html>

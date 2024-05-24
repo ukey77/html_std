@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마크업 연습중</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Grandiflora+One&family=Hahmlet:wght@100..900&family=Hi+Melody&family=Jua&family=Noto+Serif+KR:wght@200..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: "Jua", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        #abc {
+            border: 3px solid rgba(255, 71, 178, 0.651);
+            margin: 0 auto;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        header {
+            background: rgb(255, 229, 233);
+            padding: 10px
+        }
+
+        #def {
+            display: flex;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+            flex: 2;
+            background: pink;
+        }
+        
+        main p {
+            text-align: left;
+        }
+
+        aside {
+            padding: 20px;
+            flex: 1;
+            background: rgb(255, 173, 187);
+        }
+        aside p {
+            text-align: left;
+        }
+        footer {
+            padding: 30px;
+            background: #ffdfdf;
+        }
+
+        @media(max-width: 550px) {
+            #def {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="abc">
+        <header>
+            <h1>
+                상단
+            </h1>
+        </header>
+        <div id="def">
+            <main>
+                <h2>메인</h2>
+                <p>모든 국민은 주거의 자유를 침해받지 아니한다. 주거에 대한 압수나 수색을 할 때에는 검사의 신청에 의하여 법관이 발부한 영장을 제시하여야 한다. 국회나 그 위원회의 요구가 있을
+                    때에는 국무총리·국무위원 또는 정부위원은 출석·답변하여야 하며, 국무총리 또는 국무위원이 출석요구를 받은 때에는 국무위원 또는 정부위원으로 하여금 출석·답변하게 할 수 있다.
+                </p>
+
+                <p>모든 국민은 보건에 관하여 국가의 보호를 받는다. 정당은 법률이 정하는 바에 의하여 국가의 보호를 받으며, 국가는 법률이 정하는 바에 의하여 정당운영에 필요한 자금을 보조할 수
+                    있다.</p>
+
+                <p>선거에 있어서 최고득표자가 2인 이상인 때에는 국회의 재적의원 과반수가 출석한 공개회의에서 다수표를 얻은 자를 당선자로 한다. 헌법개정안이 제2항의 찬성을 얻은 때에는 헌법개정은
+                    확정되며, 대통령은 즉시 이를 공포하여야 한다.</p>
+
+
+            </main>
+            <aside>
+                <h2>사이드</h2>
+                <p>대한민국의 영토는 한반도와 그 부속도서로 한다. 행정각부의 장은 국무위원 중에서 국무총리의 제청으로 대통령이 임명한다. 모든 국민은 신속한 재판을 받을 권리를 가진다. 형사피고인은
+                    상당한 이유가 없는 한 지체없이 공개재판을 받을 권리를 가진다.</p>
+
+                <p>모든 국민은 학문과 예술의 자유를 가진다. 국무위원은 국무총리의 제청으로 대통령이 임명한다. 국가의 세입·세출의 결산, 국가 및 법률이 정한 단체의 회계검사와 행정기관 및 공무원의
+                    직무에 관한 감찰을 하기 위하여 대통령 소속하에 감사원을 둔다.</p>
+
+
+            </aside>
+        </div>
+        <footer>
+            하단
+        </footer>
+    </div>
+</body>
+
+</html>

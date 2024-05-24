@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #layout{
+            border: 10px dashed rgb(152, 226, 255);
+            max-width: 900px;
+            height: 900px;
+            margin: 50px auto;
+            display: flex;
+        }
+        main{
+            flex: 2;
+            background-color: gold;
+            /* width, height값 없어도  */
+        }
+        aside{
+            flex: 1;
+            background-color: rgb(95, 147, 243);
+        }
+    </style>
+</head>
+<body>
+    <div id="layout">
+        
+        <main>main</main>
+        <aside>aside</aside>
+    </div>
+</body>
+</html>
