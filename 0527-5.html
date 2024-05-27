@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트로 요소에 컨텐츠 넣긴</title>
+    <title>자바스크립트로 배열 객체 연습하기</title>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
 
     <style>
         * {
             margin: 0;
             padding: 0;
-
+            box-sizing: border-box;
+            border-collapse: collapse;
         }
         section {
             max-width: 900px;
@@ -75,53 +76,20 @@
             <li>excercise</li>
         </ol>
         <p>1111</p>
-        <p>2222</p>
-        <p>3333</p>
+        <p>1111</p>
+        <p>1111</p>
     </section>
     <script>
+        // Array 객체를 선언하고 5개의 값 할당
 
-        let cont1 = document.querySelector('p');
-        cont1.innerHTML="라인컴퓨터아트학원";
+        const myFruits = ['apple','banana','melon','grape','orange'];
+        console.log(myFruits[1]);
 
-        let x =5;
-        let y = 3;
-
-        cont1.innerHTML=x+y;
-
-        let cont2 = document.getElementById('title');
-        cont2.innerText="자바스크립트";
-        
-        document.querySelector('h1').style.background = "gold";
-        document.querySelector('ol').style.background="blue";
-        document.querySelectorAll('ol')[1].style.background="tomato";
-        document.querySelector('ol').style.color="white";
-        document.querySelector('section').style.borderRadius = 50 +"px";
-
-        document.querySelectorAll('p')[2].innerText = "y = " + y;
-        document.querySelectorAll('p')[2].style.border = '3px dashed blue';
-        
-
-        document.querySelectorAll('ol li')[3].style.border='3px dotted black';
-
-        // document.querySelectorAll('ol')[1].children[3].style.background='gold';
-        // document.querySelectorAll('ol li')[8].style.background='gold';
-        // document.querySelectorAll('ol')[1].querySelectorAll('li')[1].style.backgroundColor="orange";
-        // document.querySelector('ol li:last-child').style.backgroundColor="orange";
-
-/*         
-        for(let i=0; i<=10; i++){
-            if(i%2==0){
-              document.querySelectorAll('ol li')[i].style.border="1px dashed white";  
-            }
-            
-        }; */
-
-        console.log(x >= y);
-        console.log(x < y);
-        console.log(x++);
-        y--;
-        console.log(y);
+        for(let i=0;i<myFruits.length;i++){
+            console.log(myFruits[i]);
+        }
     </script>
+
     
 </body>
 

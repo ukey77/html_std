@@ -11,7 +11,8 @@
         * {
             margin: 0;
             padding: 0;
-
+            box-sizing: border-box;
+            border-collapse: collapse;
         }
         section {
             max-width: 900px;
@@ -75,52 +76,68 @@
             <li>excercise</li>
         </ol>
         <p>1111</p>
-        <p>2222</p>
-        <p>3333</p>
+        <p>1111</p>
+        <p>1111</p>
     </section>
     <script>
-
-        let cont1 = document.querySelector('p');
-        cont1.innerHTML="라인컴퓨터아트학원";
-
-        let x =5;
-        let y = 3;
-
-        cont1.innerHTML=x+y;
-
-        let cont2 = document.getElementById('title');
-        cont2.innerText="자바스크립트";
-        
-        document.querySelector('h1').style.background = "gold";
-        document.querySelector('ol').style.background="blue";
-        document.querySelectorAll('ol')[1].style.background="tomato";
-        document.querySelector('ol').style.color="white";
-        document.querySelector('section').style.borderRadius = 50 +"px";
-
-        document.querySelectorAll('p')[2].innerText = "y = " + y;
-        document.querySelectorAll('p')[2].style.border = '3px dashed blue';
-        
-
-        document.querySelectorAll('ol li')[3].style.border='3px dotted black';
-
-        // document.querySelectorAll('ol')[1].children[3].style.background='gold';
-        // document.querySelectorAll('ol li')[8].style.background='gold';
-        // document.querySelectorAll('ol')[1].querySelectorAll('li')[1].style.backgroundColor="orange";
-        // document.querySelector('ol li:last-child').style.backgroundColor="orange";
-
-/*         
-        for(let i=0; i<=10; i++){
-            if(i%2==0){
-              document.querySelectorAll('ol li')[i].style.border="1px dashed white";  
-            }
+   
+        // for(let i=1;i<=10;i++){
             
-        }; */
+        //     for(let n=1;n<=9;n++){
+        //         document.write(i + "*" + n + "=" + i*n + " " )
+        //         if(n==9){
+        //             document.write('<br>');
+        //         }
+        //     };  
+            
+        // };
 
-        console.log(x >= y);
-        console.log(x < y);
-        console.log(x++);
-        y--;
-        console.log(y);
+        const x =document.querySelectorAll("ol li"); //오브젝트, 객체
+        const y = '라인컴퓨터';
+        const z = 23;
+        const a = [1,2,3,4];
+    
+        // console.log(typeof(x));
+        // console.log(typeof y);
+        // console.log(typeof z);
+        // console.log(typeof a);
+        // console.log(typeof b);
+        // console.log(typeof c);
+        
+
+        for(let i=0; i<=9;i++){
+            if(i%2==1){
+                x[i].style.border='3px solid orange';
+            }else{
+                x[i].style.border='3px dashed green';
+                // console.log(typeof i);
+            }
+        };
+
+        // const obj = {};
+        // obj.name="홍길동";
+        // obj.age;
+        // console.log(typeof obj);
+        // console.log(obj.name);
+        // console.log(obj.age);
+
+        // console.log("----");
+        // let arr = [1,2,3,4,5];
+        // console.log(arr);
+        // console.log(typeof arr);
+
+        // const shop={};
+        // shop.myBag=5;
+        // shop.myAge-23;
+        // console.log(shop);
+
+        const line= {address:'ansan', age: 7};
+        console.log(line.age);
+
+        const age=document.querySelectorAll('p')[0]
+        age.innerText='연혁 : ' + line.age;
+
+
     </script>
     
 </body>
