@@ -51,9 +51,10 @@
            
         }
         p{
+            display: block;
             flex: 1;
             background-color: gold;
-            border-radius: 0 30px 30px 0;
+            border: 1px solid red;
         }
     </style>
 </head>
@@ -82,12 +83,37 @@
     <script>
         // Array 객체를 선언하고 5개의 값 할당
 
-        const myFruits = ['apple','banana','melon','grape','orange'];
+        const myFruits = ['apple','banana','melon','orange','watermelon'];
         console.log(myFruits[1]);
+        console.log("오늘은 귀가길에 " + myFruits[2] + " 을 살 예정!");
 
         for(let i=0;i<myFruits.length;i++){
-            console.log(myFruits[i]);
+            console.log(i, myFruits[i]);
+        };
+
+        const fruits = document.querySelectorAll('p');
+        fruits[1].innerHTML=myFruits;
+        // fruits[2].innerHTML=myFruits[4];
+        // fruits[2].innerHTML=myFruits[myFruits.length-1];
+        // fruits[2].innerHTML=myFruits['p:nth-of-type(3)'];
+
+        for(let i=0;i<myFruits.length;i++){
+            if(myFruits[i]=='watermelon'){
+                fruits[2].innerHTML=myFruits[i];
+            };
         }
+        fruits[2].innerHTML=myFruits[myFruits.indexOf('watermelon')];
+
+        let rotto = [35,44,45,7,22,11,11,12,13];
+        // document.querySelectorAll('p')[0].innerHTML=rotto
+
+        for (let i=0;i<rotto.length;i++){
+            document.querySelector('p').innerHTML = rotto[rotto.indexOf(13)]
+        }
+
+        let lotto=[];
+
+
     </script>
 
     
