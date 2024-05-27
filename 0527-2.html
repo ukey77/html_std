@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>순서있는 목록태그</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        section {
+            max-width: 600px;
+            border: 3px solid red;
+            margin: 0 auto;
+            display: flex;
+            border-radius: 30px;
+            transform: rotate(-20deg);
+            box-shadow: -3px -3px 9px red;
+            transition: 0.5s;
+            margin-top: 100px;
+        }
+
+        section:hover {
+            transform: rotate(0);
+            cursor: pointer;
+        }
+
+        h1 {
+            flex: 1;
+            background: skyblue;
+            padding: 30px;
+            border-radius: 30px 0 0 30px;
+            font-family: "Gothic A1", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        ol {
+            flex: 1;
+            background: rgb(228, 255, 228);
+            padding: 20px;
+            list-style-position: inside;
+           
+        }
+        p{
+            flex: 1;
+            background-color: gold;
+            border-radius: 0 30px 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>반응형 웹퍼블리싱 학습 순서</h1>
+        <ol>
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li>jquery</li>
+            <li>excercise</li>
+        </ol>
+        <p id="cont">1111</p>
+    </section>
+    <script>
+
+        // document.write("라인컴퓨터");
+        let item1 = 35;
+        console.log(++item1);
+
+        let x = 25;
+        console.log(x);
+
+        const y = 10;
+        console.log("y = " + y);
+        document.write(x+y);
+
+        let z = document.querySelector('p');
+        z.innerHTML=1212;
+    </script>
+    
+</body>
+
+</html>

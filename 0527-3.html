@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트로 요소에 컨텐츠 넣긴</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        section {
+            max-width: 600px;
+            border: 3px solid red;
+            margin: 0 auto;
+            display: flex;
+            border-radius: 30px;
+            /* transform: rotate(-20deg); */
+            box-shadow: -3px -3px 9px red;
+            transition: 0.5s;
+            margin-top: 100px;
+            align-items: center;
+            background-color: rgb(255, 222, 227);
+        }
+
+        section:hover {
+            transform: rotate(0);
+            cursor: pointer;
+        }
+
+        h1 {
+            flex: 1;
+            background: skyblue;
+            padding: 30px;
+            border-radius: 30px 0 0 30px;
+            font-family: "Gothic A1", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        ol {
+            flex: 1;
+            background: rgb(228, 255, 228);
+            padding: 20px;
+            list-style-position: inside;
+           
+        }
+        p{
+            flex: 1;
+            background-color: gold;
+            border-radius: 0 30px 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1 id="title">반응형 웹퍼블리싱 학습 순서</h1>
+        <ol>
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li>jquery</li>
+            <li>excercise</li>
+        </ol>
+        <p id="cont">1111</p>
+    </section>
+    <script>
+
+        let cont1 = document.querySelector('p');
+        cont1.innerHTML="라인컴퓨터아트학원";
+
+        let x =5;
+        let y = 3;
+
+        cont1.innerHTML=x+y;
+
+        let cont2 = document.getElementById('title');
+        cont2.innerText="자바스크립트";
+        
+        document.querySelector('h1').style.background = "gold";
+        document.querySelector('ol').style.background="blue";
+        document.querySelector('ol').style.color="white";
+    </script>
+    
+</body>
+
+</html>
