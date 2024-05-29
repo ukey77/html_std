@@ -176,23 +176,50 @@
             </nav>
         </header>
         <main><img src="imges/summer_03.png" alt="여름"></main>
+        
+        <footer></footer>
+        <!-- popup -->
         <section id="popup">
             <h3>공지사항</h3>
-            <button type="button" onclick="close_btn()">닫기</button>
+            <button type="button">닫기</button>
         </section>
-        <footer onclick="open_btn()"></footer>
     </div>
     <script>
-        const $button = document.querySelector('#popup button');
+        const $popup = document.querySelector('#popup');
+        
+        $popup.children[1].addEventListener('click',dat);
 
-
-        function close_btn() {
-            document.getElementById('popup').style.display = 'none';
+        function dat(){
+            $popup.style.display = 'none';
         };
 
-        function open_btn() {
-            document.querySelector('#popup').style.display = 'block';
+        // mission
+        const open_btn = document.querySelector('footer');
+
+/*         open_btn.addEventListener('click',aul);
+
+        function aul(){
+            $popup.style.display = 'block';
         };
+ */
+
+        // 2
+
+        open_btn.addEventListener('click',function(){
+            $popup.style.display = 'block';
+        });
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 
