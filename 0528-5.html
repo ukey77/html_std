@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상단메뉴 고정 시키기</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin-top: 20px;
+        }
+
+        nav {
+            max-width: 900px;
+            margin: auto;
+            border: 1px solid red;
+        }
+
+        nav ul {
+            list-style-position: inside;
+            text-align: center;
+        }
+
+        nav>ul {
+            /*교재 P.286 아래 도표부분 */
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav>ul>li {
+            border: 1px solid rgb(255, 34, 196);
+            /* flex:1; */
+            background-color: bisque;
+            flex-basis: 20%;
+            height: 50px;
+            position: relative;
+            /*하위메뉴 위치설정 때문*/
+
+        }
+
+        /*메인메뉴*/
+        .mainmenu {
+            background-color: rgb(255, 187, 187);
+            width: 60%;
+            display: inline-block;
+        }
+
+        /*서브메뉴*/
+        .submenu {
+            height: 0;
+            border: 3px solid rgb(141, 168, 255);
+            overflow-y: hidden;
+            position: absolute;
+            z-index: 1;
+            background-color: #ffffffd0;
+            width: 100%;
+        }
+
+        .submenu li:hover {
+            background-color: yellow;
+        }
+
+        /*메인메뉴에 마우스를 대면 서브메뉴가 보인다 */
+        nav>ul>li .submenu {
+            transition: 0.5s;
+        }
+
+        nav>ul>li:hover .submenu {
+            height: 100px;
+        }
+
+        /* 공지사항 팝업 */
+        div {
+            border: 5px dashed tomato;
+            max-width: 900px;
+            margin: auto;
+            height: 80vh;
+            position: relative;
+            background-color: lavender;
+        }
+
+        div>button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 5px 8px;
+        }
+
+        #popup {
+            background-color: rgb(255, 243, 177);
+            /* margin:auto;*/
+            width: 300px;
+            padding: 50px;
+            min-height: 40vh;
+            /* 교재 P.246 */
+            position: absolute;
+            left: calc((100% / 2) - 150px);
+            top: 50px;
+            box-sizing: border-box;
+            /*교재 P.211 */
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px black;
+        }
+
+        #popup button {
+            padding: 3px 6px;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="#" class="mainmenu">메뉴1</a>
+                <!-- 서브메뉴:시작 -->
+                <ul class="submenu">
+                    <li><a href="#">메뉴1_1</a></li>
+                    <li><a href="#" style="color: red;">메뉴1_2</a></li>
+                    <li><a href="#">메뉴1_3</a></li>
+                </ul>
+                <!-- 서브메뉴:끝 -->
+            </li>
+            <li>
+                <a href="#" class="mainmenu">메뉴2</a>
+                <!-- 서브메뉴:시작 -->
+                <ul class="submenu">
+                    <li><a href="#">메뉴2_1</a></li>
+                    <li><a href="#">메뉴2_2</a></li>
+                    <li><a href="#">메뉴2_3</a></li>
+                </ul>
+                <!-- 서브메뉴:끝 -->
+            </li>
+            <li>
+                <a href="#" class="mainmenu">메뉴3</a>
+                <!-- 서브메뉴:시작 -->
+                <ul class="submenu">
+                    <li><a href="#">메뉴3_1</a></li>
+                    <li><a href="#">메뉴3_2</a></li>
+                    <li><a href="#">메뉴3_3</a></li>
+                </ul>
+                <!-- 서브메뉴:끝 -->
+            </li>
+        </ul>
+    </nav>
+    <div>
+        <section id="popup">
+            <h2>공지사항</h2>
+            <button type="button" onclick="close1()">닫기</button>
+        </section>
+        <button type="button" onclick="show1()">보이기</button>
+    </div>
+
+    <script>
+        function close1() {
+            //alert("버튼클릭함");
+            document.getElementById("popup").style.display = "none";
+        }
+        function show1() {
+            //alert("버튼클릭함");
+            document.getElementById("popup").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
