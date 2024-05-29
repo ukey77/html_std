@@ -109,7 +109,7 @@ footer {
     top: 45%;
     transform: translate(-50%, -50%);
     background-color: gold;
-    min-width: 400px;
+    width: 350px;
     height: 400px;
     /* z-index: 2; */
     border-radius: 10%;
@@ -123,9 +123,9 @@ button {
     padding: 10px 20px;
 }
 
-@media(min-width:300px){
+@media(max-width:300px){
     #popup{
-        min-width: 250px;
+        width: 250px;
         height: 300px;
     }
 }
