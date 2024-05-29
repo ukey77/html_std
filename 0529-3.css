@@ -109,7 +109,7 @@ footer {
     top: 45%;
     transform: translate(-50%, -50%);
     background-color: gold;
-    width: 500px;
+    min-width: 300px;
     height: 400px;
     /* z-index: 2; */
     border-radius: 10%;
@@ -118,8 +118,8 @@ footer {
 
 button {
     position: absolute;
-    left: 80%;
-    top: 83%;
+    right: 20px;
+    bottom: 20px;
     padding: 10px 20px;
 }
 
