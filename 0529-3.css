@@ -88,7 +88,7 @@ main {
     height: 70vh;
 }
 
-main>img {
+main>img{
     height: 100%;
 }
 
@@ -122,3 +122,4 @@ button {
     top: 83%;
     padding: 10px 20px;
 }
+

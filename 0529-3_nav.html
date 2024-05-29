@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상단메뉴(메인/하위메뉴) 슬라이딩 구현, 외부스타일시트</title>
     <link rel="stylesheet" href="0529-3.css">
-    <script src="0523-3.js"></script>
+    
 </head>
 
 <body>
@@ -17,7 +17,7 @@
                     <li><a href="#" class="mainMenu">메뉴1</a>
                         <nav class="subMenu">
                             <a href="#">서브메뉴1-1</a>
-                            <a href="#">서브메뉴1-2</a>
+                            <a href="#" onclick="red()">서브메뉴1-2</a>
                         </nav>
                     </li>
                     <li><a href="#" class="mainMenu">메뉴2</a>
@@ -40,7 +40,7 @@
                     <li><a href="#" class="mainMenu">메뉴4</a>
                         <nav class="subMenu">
                             <a href="#">서브메뉴4-1</a>
-                            <a href="#">서브메뉴4-2</a>
+                            <a href="#" onclick="blue()">서브메뉴4-2</a>
                             <a href="#">서브메뉴4-3</a>
                         </nav>
                     </li>
@@ -64,6 +64,7 @@
         </section>
     </div>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
