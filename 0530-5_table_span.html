@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>구구단 출력</title>
+    <title>셀합치기</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Do+Hyeon&family=Dongle&family=Gowun+Batang&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
@@ -29,9 +29,11 @@
         th,
         td {
             border: 1px solid #333;
-            /* text-align: center; */
         }
-
+        td{
+            text-align: center;
+            
+        }
         thead {
             background-color: #97DBAE;
         }
@@ -57,62 +59,40 @@
         </colgroup>
         <thead>
             <tr>
-                <th>교과목</th>
-                <th>점수</th>
+                <th colspan="2">교과목</th>
+                <!-- <th>점수</th> -->
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th>HTML</th>
+                <th rowspan="2">HTML+CSS</th>
                 <td id="s1">100점</td>
             </tr>
             <tr>
-                <th>CSS</th>
-                <td id="s2">85점</td>
-            </tr>
-            <tr class="tr1">
-
+                <!-- <th>CSS</th> -->
+                <td id="s2" rowspan="2">85점</td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
                 <th>평균</th>
-                <td id="s3"></td>
+                <td id="s3" rowspan="2"></td>
+            </tr>
+            <tr>
+                <th>평균</th>
+                <!-- <td id="s3"></td> -->
+            </tr>
+            <tr>
+                <th colspan="2">연습중</th>
             </tr>
         </tfoot>
     </table>
-    <br>
 
-    <br>
+
 
     <script>
-        // for(let i=1; i<=9; i++){
-        //     document.write(i + '단' + '<br>');
-        //     for(let n=1; n<=9; n++){
-        //         document.write(i + '*' + n + '=' + i*n);
-        //         document.write('<br>');
-        //     };
-        //     document.write('<br>');
-        // };
 
-        // for(let i=1; i<10; i++){
-        //     if(i==3){
-        //         document.getElementById('s3').innerHTML=i;
-        //     };
-        // };
-        const ss = document.getElementById('s3');
-        let eList = ['🧐', '👻', '😻', '👾', '🤖', '👺', '💀', '🐱‍👤', '🐱‍🐉', '🎈']
 
-        for (let i = 2; i < 10; i++) {
-            ss.innerHTML += (i + '단 <br>');
-            for (let n = 1; n < 10; n++) {
-                ss.innerHTML += (i + '*' + n + '=' + i * n + eList[i] + '<br>');
-                if (n == 9) {
-                    ss.innerHTML += '<br>';
-                };
-            };
-
-        };
 
     </script>
 </body>
