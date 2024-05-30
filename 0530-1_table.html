@@ -5,24 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>기본도표1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Do+Hyeon&family=Dongle&family=Gowun+Batang&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+
     <style>
+        * {
+            font-family: "Dongle", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+            font-size: 20px;
+        }
+
         table {
             width: 80vw;
+            height: 10vh;
             border-collapse: collapse;
-
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         th,
         td {
             border: 1px solid #333;
+            /* text-align: center; */
+        }
+
+        thead {
+            background-color: #97DBAE;
         }
 
         .c1 {
-            background: gold;
+            background: #C3E5AE;
+            width: 52%;
         }
 
         .c2 {
-            background: rgb(232, 255, 177);
+            background: #F0FFC2;
+            width: 48%;
+
         }
     </style>
 </head>
@@ -41,18 +61,18 @@
         </thead>
         <tbody>
             <tr>
-                <td>HTML</td>
-                <td>93</td>
+                <th>HTML</th>
+                <td id="s1">100</td>
             </tr>
             <tr>
-                <td>CSS</td>
-                <td>92</td>
+                <th>CSS</th>
+                <td id="s2">90</td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <td>평균</td>
-                <td>92.5</td>
+                <th>평균</th>
+                <td id="avg">95</td>
             </tr>
         </tfoot>
     </table>
@@ -80,6 +100,29 @@
         </tr>
     </table>
     <br>
+
+    <script>
+        // HTML 점수
+        const score1 = document.getElementById('s1');
+        // score1.innerHTML=100; 
+        document.write('HTML : ' + score1.innerHTML + '점, 타입 : ' +typeof(score1.innerHTML));
+        document.write('<br>');
+
+        // CSS 점수
+        const score2 = document.getElementById('s2');
+        // score2.innerHTML=87;
+        document.write('CSS : ' + score2.innerHTML +'점, 타입 : ' + typeof(score2.innerHTML));
+        document.write('<br>');
+
+
+        // 평균
+        const avg = document.querySelector('#avg');
+        // avg.innerHTML=(parseInt(score1.innerHTML)+parseInt(score2.innerHTML)) / 2;
+        // avg.innerHTML=((score1.innerHTML)*1+(score2.innerHTML)*1) / 2;
+        document.write('평균 : ' + avg.innerHTML + '점, 타입 : ' + typeof(avg.innerHTML));
+
+
+    </script>
 </body>
 
 </html>
