@@ -64,17 +64,17 @@
         <tbody>
             <tr>
                 <th>HTML</th>
-                <td id="s1">100</td>
+                <td id="s1">100점</td>
             </tr>
             <tr>
                 <th>CSS</th>
-                <td id="s2">85</td>
+                <td id="s2">85점</td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
                 <th>평균</th>
-                <td id="avg">95</td>
+                <td id="avg"></td>
             </tr>
         </tfoot>
     </table>
@@ -104,39 +104,18 @@
     <br>
 
     <script>
-        // HTML 점수
         const score1 = document.getElementById('s1');
-        // score1.innerHTML=100; 
-        document.write('HTML : ' + score1.innerHTML + '점, 타입 : ' + typeof (score1.innerHTML));
-        document.write('<br>');
+        let cc1 = parseInt(score1.innerHTML);
 
-        // CSS 점수
-        const score2 = document.getElementById('s2');
-        // score2.innerHTML=87;
-        document.write('CSS : ' + score2.innerHTML + '점, 타입 : ' + typeof (score2.innerHTML));
-        document.write('<br>');
+        const score2 = document.getElementById('s2'); 
+        let cc2 = parseInt(score2.innerHTML);
+
+        const avg1 = document.getElementById('avg');
+        avg1.innerHTML= (cc1 + cc2 )/2 + '점';
 
 
-        // 평균
-        const avg = document.querySelector('#avg');
-        // avg.innerHTML=(parseInt(score1.innerHTML)+parseInt(score2.innerHTML)) / 2;
-        // avg.innerHTML=((score1.innerHTML)*1+(score2.innerHTML)*1) / 2;
-        document.write('평균 : ' + avg.innerHTML + '점, 타입 : ' + typeof (avg.innerHTML));
+        
 
-        let c2 = Number(score2.innerHTML)
-        console.log('1. ' + c2, typeof c2); // 설정값 : 85
-        console.log('2. ' + c2--, typeof c2); // 85 -> 출력후 84
-        console.log('3. ' + c2++, typeof c2); // 84 출력후 -> 85
-        console.log('4. ' + c2++, typeof c2); // 85 출력후 -> 86
-        console.log('5. ' + --c2, typeof c2); // 85 선지시
-        console.log('6. ' + --c2, typeof c2); // 84 선지시
-        console.log('7. ' + c2, typeof c2); // 최종값 84
-
-
-        score2.innerHTML = c2;
-
-
-        avg.innerHTML = (Number(score1.innerHTML) + Number(score2.innerHTML)) / 2;
 
     </script>
 </body>
