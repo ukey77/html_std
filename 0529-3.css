@@ -1,7 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+
+    /* box-sizing: border-box; */
 }
 
 ul,
@@ -11,8 +12,8 @@ li {
 }
 
 img {
-    max-width: 100%;
-    display: block;
+    width: 100%;
+    /* display: block; */
 }
 
 a {
@@ -31,27 +32,30 @@ a {
 header {
     position: relative;
     height: 100px;
-    background-color: #333;
     z-index: 1;
+    width: 100%;
+    background: #333;
 }
 
 /* header nav */
+
+
 nav {
     /* border: 1px solid orange; */
-    /* margin-top: 30px;s */
+    /* margin-top: 30px; */
     /* padding-top: 30px; */
     background: #333;
     /* background: #ffc5c5; */
+    
 }
 
 nav>ul {
     display: flex;
     justify-content: space-around;
     background-color: #333;
-    /* margin-top: 30px; */
 }
 
-nav ul li {
+nav li {
     /* border: 1px solid red; */
     width: 130px;
     text-align: center;

@@ -40,3 +40,11 @@ function tomato(){
     this.style.background='tomato';
 };
 
+
+const subMenu3 = document.querySelectorAll('.subMenu')[2];
+
+subMenu3.children[2].addEventListener('click',gold);
+
+function gold(){
+    subMenu3.children[2].style.background='gold';
+}
