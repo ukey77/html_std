@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            border-collapse: collapse;
+            width: 70vw;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+        table{
+            box-shadow: 5px 5px 6px #9d9d9d;
+        }
+        caption{
+            font-size: 1.3rem;
+            padding-bottom: 10px;
+            text-align: left;
+        }
+        th,
+        td {
+            border: 1px solid #333;
+            text-align: center;
+            padding: 5px;
+        }
+        tbody tr td:nth-child(2){
+            color: blue;
+        }
+
+        tr:first-of-type td:nth-child(2){
+            color: tomato;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>상품에 따른 상하반기 판매량</caption>
+        <colgroup>
+            <col style="background-color: #72bbdd;">
+            <col style="background-color: #A3D6F5;">
+            <col style="background-color: #CEEBFB;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">구분⚙</th>
+                <th scope="col">데스크탑💻</th>
+                <th scope="col">스마트폰📱</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">상반기 판매수</th>
+                <td>2만대</td>
+                <td>5만대</td>
+            </tr>
+            <tr scope="row">
+                <th>하반기 판매수</th>
+                <td>3만대</td>
+                <td>7만대</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
