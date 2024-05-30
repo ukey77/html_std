@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 인수</title>
+    <style>
+        * {
+            border-collapse: collapse;
+            width: 70vw;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+
+        table {
+            box-shadow: 5px 5px 6px #9d9d9d;
+        }
+
+        caption {
+            font-size: 1.3rem;
+            padding-bottom: 10px;
+            text-align: left;
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+            text-align: center;
+            padding: 5px;
+        }
+
+        tr:nth-child(2) td:last-child {
+            color: rgb(224, 188, 25);
+        }
+
+        tr:first-of-type td:nth-child(2) {
+            color: tomato;
+        }
+
+        span {
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>상품에 따른 상하반기 판매량💌</caption>
+        <colgroup>
+            <col style="background-color: #72bbdd;">
+            <col style="background-color: #A3D6F5;">
+            <col style="background-color: #CEEBFB;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col" id="fruit">구분⚙</th>
+                <th scope="col">데스크탑💻</th>
+                <th scope="col" onclick="cell1('짜장면','짬뽕','✌')">스마트폰📱</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" onclick="sang('딸기라떼',3)">상반기 판매수</th> 
+                <!-- 3 = 인수(argument) -->
+                <td>2만대</td>
+                <td onclick="goal(50,70)">5만대</td>
+            </tr>
+            <tr scope="row" >
+                <th onclick="ha(5,'카페')">하반기 판매수</th>
+                <td id="tri">3만대</td>
+                <td onclick="output2()">7만대</td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="text-align: center;">상반기 데스크탑💻👉 <span> ?-? </span></p>
+    <p style="text-align: center;">하반기 스마트폰📱👉 <span> ?-? </span></p>
+    <p style="text-align: center;">상반기 판매수('딸기라떼', 3)👉 <span> ?-? </span></p>
+    <p style="text-align: center;">하반기 판매수(5, '카페')👉 <span> ?-? </span></p>
+    <p style="text-align: center;">스마트폰('짜장면','짬뽕','✌')👉 <span> ?-? </span></p>
+    <p style="text-align: center;">5만대(50,70)👉 <span> ?-? </span></p>
+    <p style="text-align: center;">3만대(50,70)👉 <span> ?-? </span></p>
+    <p style="text-align: center;">구분('🍓','🍌')👉 <span> ?-? </span></p>
+
+    <!-- script -->
+    <script>
+        const copy1 = document.querySelector('tr:first-child td:nth-child(2)');
+        const copy2 = document.querySelector('tr:nth-child(2) td:last-child');
+
+        const value = document.querySelectorAll('span');
+        copy1.addEventListener('click', output1);
+
+        // 상반기 데스크탑
+        function output1() {
+            value[0].innerHTML = copy1.innerHTML;
+            value[0].style.backgroundColor = 'tomato';
+            value[0].style.color = 'white';
+        };
+
+        // 하반기 스마트폰
+        function output2() {
+            value[1].innerHTML = copy2.innerHTML;
+            value[1].style.backgroundColor = 'orange';
+        };
+
+        // 상반기 판매수 인수(2)
+        function sang(i,n){ // 매개변수(parameter)
+            value[2].innerHTML = 'i: ' + i + '(' + typeof i + ')/ n: ' + n + '(' + typeof n + ')';
+            value[2].style.background='gold';
+        };
+
+        // 하반기 판매수 인수(2)
+        function ha(i, j){
+            value[3].innerHTML = '오늘 ' + i + '시에 중앙역 앞 ' + j + '에서 만나자';
+            value[3].style.background='#C1DB9A';
+
+        };
+
+        // 스마트폰 인수(2)
+        function cell1(i,n,v){
+            value[4].innerHTML='오늘은 친구와 '+i + '과 '+n + '을 같이 나눠먹었다' + v;
+            value[4].style.background='#8BC140';
+
+        };
+
+        // 5만대 인수(2)
+        function goal(i,n){
+            value[5].innerHTML= i + n +'올해 목표는 '+ (i + n) + '만대 판매입니다';
+            value[5].style.background='#9EBDCB';
+        };
+
+        // 3만대 addEventListener인수 2
+        const tri = document.getElementById('tri');
+        tri.addEventListener('click',function(){
+            bbb(30,20);
+        });
+        function bbb(i,n){
+            value[6].innerHTML = '인수연결 i ➕ n : ' + i + n + ' / 인수 사칙연산 (i ➕ n): ' + (i + n);
+            value[6].style.background='#72BBDD';
+        };
+
+
+        // mission 
+        const myFruit = document.getElementById('fruit');
+        myFruit.addEventListener('click',function(){
+            myBag('🍓','🍌')
+        });
+
+        function myBag(i,n){
+            value[7].innerHTML = i + '를 먹으면 ' + '나한테 ' + n;
+            value[7].style.background='#C0A5D4';
+
+        };
+        
+
+</script>
+</body>
+
+</html>
