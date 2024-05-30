@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본도표1</title>
+    <style>
+        table {
+            width: 80vw;
+            border-collapse: collapse;
+
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+        }
+
+        .c1 {
+            background: gold;
+        }
+
+        .c2 {
+            background: rgb(232, 255, 177);
+        }
+    </style>
+</head>
+
+<body>
+    <table class="t1">
+        <colgroup>
+            <col class="c1">
+            <col class="c2">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>교과목</th>
+                <th>점수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>HTML</td>
+                <td>93</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td>92</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>평균</td>
+                <td>92.5</td>
+            </tr>
+        </tfoot>
+    </table>
+    <br>
+    <table class="t2">
+        <tr>
+            <td colspan="3">1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </table>
+    <br>
+    <table class="t3">
+        <tr>
+            <td rowspan="2">1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+    </table>
+    <br>
+</body>
+
+</html>
