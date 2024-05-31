@@ -16,8 +16,12 @@
             font-style: normal;
         }
 
+        body {
+            display: flex;
+        }
+
         form {
-            max-width: 300px;
+            width: 320px;
         }
 
         fieldset {
@@ -42,21 +46,30 @@
             /* border: 1px solid red; */
         }
 
-        input {
+        span {
+            display: inline-block;
+
+        }
+
+        input,
+        span {
             float: right;
         }
-        input:hover{
-            background: #fff9fa;
+
+        input:hover {
+            background: #e2f6ff;
         }
+
         p {
             color: #75181A;
         }
-        button{
+
+        button {
             position: absolute;
-            top: 77%;
+            bottom: 15px;
             left: 50%;
             transform: translateX(-50%);
-            background:#75181A;
+            background: #75181A;
             border: 0;
             box-shadow: 1px 1px 3px #491718;
             border-radius: 10px;
@@ -64,12 +77,21 @@
             color: #fff;
             transition: 0.3s;
         }
-        button:hover{
-            background:#ad5e5f;
+
+        button:hover {
+            background: #ad5e5f;
         }
-        footer{
-            max-width: 300px;
+
+        footer {
+            width: 200px;
             text-align: center;
+            background: #fff6e5;
+            border-radius: 20px;
+            margin-left: 10px;
+        }
+        footer>p{
+            text-align: left;
+            padding-left: 15px;
         }
     </style>
 </head>
@@ -77,45 +99,116 @@
 <body>
     <form action="#" method="post">
         <fieldset>
-            <legend>LOGIN</legend>
-            <p>🌞ID : <input type="text" required></p>
-            <p>🌛PW : <input type="password" required></p>
-            <button type="button">Sign in</button>
+            <legend>개인정보</legend>
+
+            <p><label for="id">ID</label><input type="text" required id="id"></p>
+            <p><label for="pw">PW</label><input type="password" required id="pw"></p>
+            <p><label for="sc">검색</label><input type="search" id="sc"></p>
+            <p><label for="em">이메일</label><input type="email" id="em"></p>
+            <p><label for="co">선호색상</label><input type="color" id="co"></p>
+            <p><label for="ma">만족도</label><input type="range" id="ma"></p>
+            <!-- radio type : 수신여부 -->
+            <p>
+                수신여부
+                <span>
+                    <input type="radio" name="tf" id="y" value="수신하겠음"><label for="y">예</label><br>
+                    <input type="radio" name="tf" id="n" value="안하겠음"><label for="n">아니오</label>
+                </span>
+            </p>
+            <br>
+            <hr>
+
+            <p><label for="ho">취미2개</label><input type="checkbox" id="ho"></p>
+            <p><button type="button">확인</button></p>
+
         </fieldset>
     </form>
     <footer>
-        <p>🔒</p>
-        <p>🔑</p>
-        <p>🔒+🔑</p>
+        <p>🔒 ID</p>
+        <p>🔑 PW</p>
+        <p>🔒🔑 ID+PW</p>
+        <p>🔍 SEARCH</p>
+        <p>✉ E-Mail</p>
+        <p>🚥 Color</p>
+        <p>😊 Favorite</p>
+        <p>⭕❌ 수신여부</p>
+
     </footer>
 
-    <script>
+    <!-- script start -->
+  <script>
         const x = document.querySelectorAll('input');
         const sign = document.querySelector('button');
         const output = document.querySelectorAll('footer > p');
         // console.log(x);
 
+        // 0. 아이디출력
         sign.addEventListener('click', loginSub);
-        function loginSub(){
+        function loginSub() {
             console.log(x[0].value);
-            output[0].innerHTML='id : ' +x[0].value + '님 환영합니다';
-            output[0].style.border='1px solid pink'
+            output[0].innerHTML = '아이디 : ' + x[0].value + '님 환영합니다';
+            output[0].style.border = '1px solid pink'
         };
-
+        // 1. 비밀번호 출력
         sign.addEventListener('click', passSub);
 
-        function passSub(){
-            output[1].innerHTML='pw : ' +x[1].value;
-            output[1].style.border='1px solid pink';
+        function passSub() {
+            output[1].innerHTML = '비밀번호 : ' + x[1].value;
+            output[1].style.border = '1px solid pink';
+        };
+        // 2. 아이디+비밀번호출력
+        sign.addEventListener('click', allSub);
+        function allSub() {
+            output[2].innerHTML = '아이디 : ' + x[0].value + '/ 비번 :' + x[1].value;
+            output[2].style.border = '1px solid pink';
         };
 
-        sign.addEventListener('click',allSub);
-        function allSub(){
-            output[2].innerHTML='id : ' + x[0].value + '/ pw :' + x[1].value;
-            output[2].style.background='pink';
-
+        // 3. 검색 출력
+        const srchVal = document.getElementById('sc');
+        sign.addEventListener('click', search);
+        function search() {
+            output[3].innerHTML = '검색 : ' + srchVal.value
+            output[3].style.border = '1px solid pink';
         };
-    </script>
+
+        // 4. email  출력
+        const myEm = document.getElementById('em');
+        sign.addEventListener('click', email);
+        function email() {
+            output[4].innerHTML = '이메일 : ' + myEm.value
+            output[4].style.border = '1px solid pink';
+        };
+
+        // 5. color  출력
+        const fa_color = document.getElementById('co');
+        sign.addEventListener('click', faColor);
+        function faColor() {
+            output[5].innerHTML = '선호색상 : ' + fa_color.value
+            output[5].style.border = '1px solid pink';
+        };
+        // 6. 만족도
+        const fa_con = document.getElementById('ma');
+        sign.addEventListener('click', man);
+        function man() {
+            output[6].innerHTML = '만족도 : ' + fa_con.value
+            output[6].style.border = '1px solid pink';
+        };
+
+        // 7. 수신여부 true, false
+        sign.addEventListener('click', tf);
+        function tf() {
+            const x7 = document.querySelector("input[name='tf']:checked");
+            output[7].innerHTML = '수신여부 : ' + x7.value
+            output[7].style.border = '1px solid pink';
+        };
+
+
+
+        
+
+
+    </script> 
+<!-- <script src="script.js"></script> -->
 </body>
 
 </html>
