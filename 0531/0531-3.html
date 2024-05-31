@@ -174,14 +174,23 @@
             output[7].innerHTML = '만족도: ' + rang.value;
             output[8].innerHTML='이메일 수신여부: ' + chkRdo.value;
 
-
             for (let i of chkHob){
                 output[9].innerHTML +=  i.value + '\t';
             };
 
 
-            
+
         });
+
+        subBtn.addEventListener('click', function () {
+            const chkHob = document.querySelectorAll('input[name="hobby"]:checked'); // 9
+
+            for (let i of chkHob){
+                output[9].innerHTML +=  i.value + '\t';
+            };
+
+        });
+
 
         const numMi = [10, 20, 30, 40, 50];
 
