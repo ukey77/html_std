@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>input element</title>
     <style>
-        body{
+        body {
             display: flex;
             justify-content: space-around;
             max-width: 70vw;
@@ -14,6 +14,7 @@
             margin: 0 auto;
 
         }
+
         form {
             position: relative;
             /* border: 1px solid red; */
@@ -48,39 +49,44 @@
         .align input {
             float: right;
         }
+
         input:not([type="color"], [type="radio"], [type="checkbox"], [type="image"]) {
             width: 150px;
         }
-        footer{
+
+        footer {
             width: 300px;
             border: 3px dashed #106923;
             margin: 10px;
             padding: 10px;
         }
-        div{
+
+        div {
             text-align: center;
         }
-        button{
+
+        button {
             border-radius: 50%;
             background: #9affaf;
             margin-bottom: 10px;
         }
-            
-        button:hover{
+
+        button:hover {
             background: #1fd145;
 
         }
-        @media(max-width: 500px){
-            body{
+
+        @media(max-width: 500px) {
+            body {
                 display: flex;
                 flex-direction: column;
             }
-            form{
+
+            form {
                 margin-bottom: 30px;
             }
 
         }
-    
     </style>
 </head>
 
@@ -100,7 +106,7 @@
                 아니오 <input type="radio" name="recive">
             </p> -->
 
-            <p >이메일수신여부<br>
+            <p>이메일수신여부<br>
                 <span>
                     <input type="radio" name="mail" id="yes" value="수신함"><label for="yes">예</label>
                     <input type="radio" name="mail" id="no" value="수신함"><label for="no">아니오</label>
@@ -120,7 +126,7 @@
             <p><input type="button" value="확인"></p><br> -->
             <p><input type="file"></p>
             <div> <button type="button"><img src="../imges/bear_2.png" alt="검색"></button></div>
-           
+
             <!-- <p><input type="image" src="../imges/bear_2.png" alt="검색"></p><br> -->
         </fieldset>
     </form>
@@ -154,31 +160,32 @@
         const rang = document.querySelector('input[type="range"]'); // 7
 
 
+        subBtn.addEventListener('click', function () {
+            const chkRdo = document.querySelector('input[name="mail"]:checked'); // 8
+            const chkHob = document.querySelectorAll('input[name="hobby"]:checked'); // 9
 
-        subBtn.addEventListener('click',function(){
-         const chkRdo = document.querySelector('input[name="mail"]:checked'); // 8
-         const chkHob = document.querySelectorAll('input[name="hobby"]:checked'); // 9
-
-            output[0].innerHTML='아이디 : ' + id.value;
-            output[1].innerHTML='비밀번호 : ' + pwd.value;
-            output[2].innerHTML='검색: ' + search.value;
-            output[3].innerHTML='이메일: ' + email.value;
-            output[4].innerHTML='전화번호: ' + tel.value;
-            output[5].innerHTML='컬러선택: ' + color.value;
-            output[6].innerHTML='수량: ' + num.value;
-            output[7].innerHTML='만족도: ' + rang.value;
+            output[0].innerHTML = '아이디 : ' + id.value;
+            output[1].innerHTML = '비밀번호 : ' + pwd.value;
+            output[2].innerHTML = '검색: ' + search.value;
+            output[3].innerHTML = '이메일: ' + email.value;
+            output[4].innerHTML = '전화번호: ' + tel.value;
+            output[5].innerHTML = '컬러선택: ' + color.value;
+            output[6].innerHTML = '수량: ' + num.value;
+            output[7].innerHTML = '만족도: ' + rang.value;
             output[8].innerHTML='이메일 수신여부: ' + chkRdo.value;
-            
+
 
             for (let i of chkHob){
                 output[9].innerHTML +=  i.value + '\t';
             };
 
+
+            
         });
 
-        const numMi=[10,20,30,40,50];
-        
-        for (let n of numMi){
+        const numMi = [10, 20, 30, 40, 50];
+
+        for (let n of numMi) {
             output[10].innerHTML += n + '\t';
         };
 
