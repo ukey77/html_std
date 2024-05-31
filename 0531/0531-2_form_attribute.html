@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form tag</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Do+Hyeon&family=Dongle&family=Gowun+Batang&family=Jua&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            font-family: "Jua", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        form {
+            max-width: 300px;
+        }
+
+        fieldset {
+            position: relative;
+            /* background: #f5e5eb; */
+            background: #f1dee0;
+            border: 0;
+            box-shadow: 3px 3px 4px rgb(216, 200, 200);
+            border-radius: 20px;
+            padding: 30px 30px 35px;
+
+        }
+
+        legend {
+            position: absolute;
+            left: 50%;
+            top: 5px;
+            transform: translateX(-50%);
+            color: #75181A;
+            font-weight: bold;
+            font-size: 1.2rem;
+            /* border: 1px solid red; */
+        }
+
+        input {
+            float: right;
+        }
+        input:hover{
+            background: #fff9fa;
+        }
+        p {
+            color: #75181A;
+        }
+        button{
+            position: absolute;
+            top: 77%;
+            left: 50%;
+            transform: translateX(-50%);
+            background:#75181A;
+            border: 0;
+            box-shadow: 1px 1px 3px #491718;
+            border-radius: 10px;
+            padding: 5px 10px;
+            color: #fff;
+            transition: 0.3s;
+        }
+        button:hover{
+            background:#ad5e5f;
+        }
+        footer{
+            max-width: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>LOGIN</legend>
+            <p>🌞ID : <input type="text" required></p>
+            <p>🌛PW : <input type="password" required></p>
+            <button type="button">Sign in</button>
+        </fieldset>
+    </form>
+    <footer>
+        <p>🔒</p>
+        <p>🔑</p>
+        <p>🔒+🔑</p>
+    </footer>
+
+    <script>
+        const x = document.querySelectorAll('input');
+        const sign = document.querySelector('button');
+        const output = document.querySelectorAll('footer > p');
+        // console.log(x);
+
+        sign.addEventListener('click', loginSub);
+        function loginSub(){
+            console.log(x[0].value);
+            output[0].innerHTML='id : ' +x[0].value + '님 환영합니다';
+            output[0].style.border='1px solid pink'
+        };
+
+        sign.addEventListener('click', passSub);
+
+        function passSub(){
+            output[1].innerHTML='pw : ' +x[1].value;
+            output[1].style.border='1px solid pink';
+        };
+
+        sign.addEventListener('click',allSub);
+        function allSub(){
+            output[2].innerHTML='id : ' + x[0].value + '/ pw :' + x[1].value;
+            output[2].style.background='pink';
+
+        };
+    </script>
+</body>
+
+</html>
