@@ -84,14 +84,26 @@
 
         article {
             background: #fffecd;
-            padding: 88px;
+            padding: 10px;
+        }
+        article b{
+            text-transform: lowercase;
+            letter-spacing: 5px;
         }
 
         aside {
             background: #fff6cb;
-            padding: 88px;
+            padding: 10px;
             margin-top: 20px;
+            overflow-Y: auto;
+            height: 200px;
         }
+        aside p{
+            text-indent: 20px;
+            text-align: justify;
+
+        }
+        
 
         footer {
             background: rgb(255, 207, 145);
@@ -110,7 +122,10 @@
         p {
             background: #fff;
             padding: 10px;
-            max-width: 500px;
+            max-width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            border-radius: 20px;
 
         }
         audio{
@@ -120,6 +135,11 @@
             max-width: 100%;
             height: 400px;
             border: 1px solid red;
+            /* display: none; */
+            /* visibility: hidden; */
+            /* opacity: 0; */
+            position: fixed;
+            right: -2000px;
         }
 
 
@@ -165,6 +185,7 @@
                 <video controls>
                     <source src="../media/movie.mp4" type="video/mp4">
                 </video>
+                <p>라인컴퓨터학원</p>
             </section>
             <section>
                 <h2>콘텐츠 그룹 02</h2>
@@ -178,9 +199,11 @@
             <div id="right">
                 <article>
                     <h2>주요기사</h2>
+                    <p><b>ABCDEF LOREM IPSUM IS SIMPLY DUMMY TEXT OF </b>the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
                 </article>
                 <aside>
                     <h3>광고</h3>
+                    <p>헌법재판소는 법률에 저촉되지 아니하는 범위안에서 심판에 관한 절차, 내부규율과 사무처리에 관한 규칙을 제정할 수 있다. 대통령후보자가 1인일 때에는 그 득표수가 선거권자 총수의 3분의 1 이상이 아니면 대통령으로 당선될 수 없다. 국회는 의장 1인과 부의장 2인을 선출한다. 법관이 중대한 심신상의 장해로 직무를 수행할 수 없을 때에는 법률이 정하는 바에 의하여 퇴직하게 할 수 있다. 모든 국민은 인간다운 생활을 할 권리를 가진다. 감사위원은 원장의 제청으로 대통령이 임명하고, 그 임기는 4년으로 하며, 1차에 한하여 중임할 수 있다. 공무원은 국민전체에 대한 봉사자이며, 국민에 대하여 책임을 진다.</p>
                 </aside>
             </div>
         </main>
