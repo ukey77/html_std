@@ -104,6 +104,10 @@
             max-width: 500px;
 
         }
+        main > div:nth-child(3) h2{
+            color: red;
+        }
+
 
         @media(max-width: 530px) {
             header {
@@ -119,6 +123,7 @@
 
             main {
                 flex-direction: column;
+                
             }
 
 
@@ -159,6 +164,38 @@
             <p>COPYRIGHT ⓒ All rights reserved.</p>
         </footer>
     </div>
+    <script>
+        // 지정 요소의 내부에 없던 span tag 요소 추가하기
+
+        const $h2 = document.querySelector('main > section:first-child h2');
+        const secnH2 = document.querySelector('main > section:nth-child(2) h2');
+        console.log($h2);
+        $h2.innerHTML += "<br><br><b style='font-size: 1.2rem; color: red;'>태그가 추가됨 </b>"
+
+        // const $section = document.querySelector('main > section');
+        // let nwSpan = document.createElement('span');
+        // nwSpan.innerHTML = '없던span이 생겻찌롱';
+
+        // $section.append(nwSpan);
+
+        const $p = document.createElement('p');
+        // alert($p);
+        $h2.after($p); // 다음요소 즉 형제요소가 생긴다.
+        $p.innerText='형제요소가 추가됨';
+
+
+        const $span = document.createElement('span'); // span element 생성
+        $span.innerHTML='형제요소가 추가추가추가' // span요소 값 할당
+        secnH2.before($span); // section h2의 앞에 추가
+
+
+        const $p2 = document.querySelector('section p');
+        const nwUl = document.createElement('ul');
+        nwUl.innerHTML = '딸기';
+        $p2.append(nwUl);
+
+    </script>
 </body>
+
 
 </html>
