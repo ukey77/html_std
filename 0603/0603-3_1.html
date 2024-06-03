@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book_88p</title>
+    <title>layout_1</title>
     <style>
         * {
             padding: 0;
             margin: 0;
-            /* box-sizing: border-box; */
+            box-sizing: border-box;
         }
 
         a {
@@ -19,46 +19,109 @@
 
         #layout {
             max-width: 1000px;
+            background-color: #ffe9ba;
         }
 
-        /* header */
         header {
             display: flex;
             align-items: flex-end;
-            background: skyblue;
         }
 
         h1 {
             padding: 30px;
-            background: #D9FBF0;
-            margin: 0 10px;
+            background-color: #fcd57a;
+            margin: 20px;
         }
 
         nav {
-            background-color: #B5F8E7;
+            background: skyblue;
             display: flex;
             flex: 1;
             justify-content: space-evenly;
             align-items: center;
             padding: 15px;
-            border: 1px solid red;
-            margin: 0 70px 0 20px;
+            /* border: 1px solid red; */
+            margin: 20px;
+            background-color: #ffd46f;
         }
 
-        nav > a{
-            border: 1px solid red;
+        nav>a {
+            /* border: 1px solid red; */
             width: 70px;
             text-align: center;
-        }
-        /* main */
-        main {
-            background-color: #92F1E1;
-            display: flex;
+            background: #fff;
         }
 
-        /* footer */
+        /* main */
+        main {
+            display: flex;
+            padding: 20px;
+        }
+
+        section {
+            padding: 200px 0;
+            flex: 2;
+            background: #fff9ea;
+            text-align: center;
+            box-sizing: border-box;
+            margin-right: 20px;
+        }
+
+        /* 사이드 */
+        #right {
+            flex: 1.5;
+            text-align: center;
+        }
+
+        article {
+            background: #fffecd;
+            padding: 88px;
+        }
+
+        aside {
+            background: #fff6cb;
+            padding: 88px;
+            margin-top: 20px;
+        }
+
         footer {
-            background: #5BDCDF;
+            background: rgb(255, 207, 145);
+            padding: 10px;
+            padding-left: 100px;
+            padding-right: 200px;
+        }
+
+        address {
+            background: #fff;
+            margin-bottom: 5px;
+            padding: 10px;
+            max-width: 500px;
+        }
+
+        p {
+            background: #fff;
+            padding: 10px;
+            max-width: 500px;
+
+        }
+
+        @media(max-width: 530px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                /* margin: 10px; */
+                width: 97%;
+                margin-right: 40px;
+            }
+
+            main {
+                flex-direction: column;
+            }
+
+
         }
     </style>
 </head>
@@ -93,15 +156,9 @@
         </main>
         <footer>
             <address>경기도 부천시 오정구 삼정동 032)674-5685 incoxpub@naver.com</address>
-            <p>COPYRIGHT ⓒ All rights reserved.
-            </p>
+            <p>COPYRIGHT ⓒ All rights reserved.</p>
         </footer>
     </div>
-
-
-    <script>
-        
-    </script>
 </body>
 
 </html>
