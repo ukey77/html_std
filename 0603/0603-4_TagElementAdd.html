@@ -67,6 +67,15 @@
             margin-right: 20px;
         }
 
+        section ul {
+            text-align: left;
+            list-style-position: inside;
+        }
+
+        section:first-child p {
+            background: gold;
+        }
+
         /* 사이드 */
         #right {
             flex: 1.5;
@@ -104,9 +113,14 @@
             max-width: 500px;
 
         }
-        main > div:nth-child(3) h2{
-            color: red;
-        }
+        audio{
+                max-width: 100%;
+            }
+            video{
+                max-width: 100%;
+                height: 400px;
+                border: 1px solid red;
+            }
 
 
         @media(max-width: 530px) {
@@ -120,11 +134,10 @@
                 width: 97%;
                 margin-right: 40px;
             }
-
             main {
                 flex-direction: column;
-                
             }
+
 
 
         }
@@ -146,9 +159,21 @@
         <main>
             <section>
                 <h2>콘텐츠 그룹 01</h2>
+                <audio controls>
+                    <source src="../media/radiant.mp3" type="audio/mpeg">
+                </audio>
+                <video controls>
+                    <source src="../media/movie.mp4" type="video/mp4">
+                </video>
             </section>
             <section>
                 <h2>콘텐츠 그룹 02</h2>
+                <audio controls>
+                    <source src="../media/horse.mp3" type="audio/mpeg">
+                </audio>
+                <video controls>
+                    <source src="../media/sea.mp4" type="video/mp4">
+                </video>
             </section>
             <div id="right">
                 <article>
@@ -181,18 +206,41 @@
         const $p = document.createElement('p');
         // alert($p);
         $h2.after($p); // 다음요소 즉 형제요소가 생긴다.
-        $p.innerText='형제요소가 추가됨';
-
+        $p.innerText = '형제요소가 추가됨';
+        // $p.style.backgroundColor='gold';
 
         const $span = document.createElement('span'); // span element 생성
-        $span.innerHTML='형제요소가 추가추가추가' // span요소 값 할당
+        $span.innerHTML = '형제요소가 추가추가추가' // span요소 값 할당
+
         secnH2.before($span); // section h2의 앞에 추가
 
 
         const $p2 = document.querySelector('section p');
         const nwUl = document.createElement('ul');
-        nwUl.innerHTML = '딸기';
+        // const $li = document.createElement('li');
+        // $li.innerHTML='딸기' + '<br>';
+        // $li.innerHTML+='바나나'+ '<br>';
+        // $li.innerHTML+='수박'+ '<br>';
+        // $li.innerHTML+='사과'+ '<br>';
+        // nwUl.append($li)
+        // // console.log(nwUl);
+        // nwUl.innerHTML = '딸기';
+        // $p2.append(nwUl);
+
+        nwUl.innerHTML = "<li>딸기</li><li>바나나</li><li>파인애플</li>";
         $p2.append(nwUl);
+        nwUl.style.background = 'yellow';
+
+
+
+
+
+
+
+
+
+
+
 
     </script>
 </body>
