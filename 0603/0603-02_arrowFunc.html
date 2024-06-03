@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrowFunc</title>
+</head>
+
+<body>
+    <h2>마우스를 살짝 가져다대세요 🌞</h2>
+    <main>미션부분입니다. <br>이부분에 마우스를 가져다 대면 '라인컴퓨터아트학원' 글자가 나오게 작업하세요.</main>
+    <p>😀</p>
+    <p>😀</p>
+    <p>😀</p>
+    <p>😀</p>
+
+    <script>
+
+        const a1 = 25; // 절대 값 변경 불가
+        const a2 = 37; // 값 변경 불가
+        const $h2 = document.querySelector('h2');
+        const main = document.querySelector('main');
+        const outPut = document.querySelectorAll('p');
+
+        // h2 마우스 가져다대면 a4 함수 호출
+        // a4는 새로운 텍스트를 h2에 표시
+        // 새로운 글자 : "화살표 함수 연습중"
+
+
+        // <h2>에 마우스를 간다대는 증상을 감지하면, a4()함수를 호출함
+
+
+        // console.log(materials.map((materials)=> materials.length));
+
+        $h2.addEventListener('mouseover', () => a4());
+        a4 = () => $h2.innerHTML = '화살표 함수 연습중';
+
+
+        main.addEventListener('mouseover', () => a5());
+        a5 = () => main.innerHTML = '라인컴퓨터아트학원';
+
+
+        main.addEventListener('mouseover', () => main.innerHTML = '라인컴퓨터아트학원');
+
+
+        function multiplyArray(arr) {
+  return arr.reduce(function(acc, num) {
+    return acc * num;
+  }, 1);
+}
+
+    </script>
+</body>
+
+</html>
