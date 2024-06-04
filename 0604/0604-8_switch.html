@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form tag, switch</title>
+    <style>
+        body {
+            /* background: url('../imges/dog_1.png') repeat-x center/20% fixed; */
+            background-image: url('../imges/dog_1.png'), url('../imges/flower.png'), url('../imges/icon.png');
+            background-repeat: no-repeat, repeat-X, repeat-Y;
+            background-attachment: fixed, scroll, scroll;
+            background-position: center center, center center;
+            background-size: 30%, 20%, 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" method="get">
+        <label for="n">구매할 과일: </label>
+        <input type="text" id="n">
+        <button>장바구니🛒</button>
+    </form>
+    <p>재의의 요구가 있을 때에는 국회는 재의에 붙이고, 재적의원과반수의 출석과 출석의원 3분의 2 이상의 찬성으로 전과 같은 의결을 하면 그 법률안은 법률로서 확정된다. 모든 국민은 그 보호하는 자녀에게
+        적어도 초등교육과 법률이 정하는 교육을 받게 할 의무를 진다. 국회에 제출된 법률안 기타의 의안은 회기중에 의결되지 못한 이유로 폐기되지 아니한다. 다만, 국회의원의 임기가 만료된 때에는 그러하지
+        아니하다. 법률안에 이의가 있을 때에는 대통령은 제1항의 기간내에 이의서를 붙여 국회로 환부하고, 그 재의를 요구할 수 있다. 국회의 폐회중에도 또한 같다. 이 헌법중 공무원의 임기 또는 중임제한에
+        관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 
+
+    </p>
+
+    <script>
+        /*         let x = document.querySelector("#n");
+                const y = document.querySelector("button");
+                y.addEventListener("click", () => zz());
+        
+                zz = () => {
+                    z = x.value;
+                    
+                    // alert(x);
+        
+                    if(z >= 60){
+                        z = "통과했습니다."
+                    } else{
+                        z = "여름방학에 재수강하세요";
+                    }
+                    document.querySelector("p").innerHTML += z + '<br>';
+        
+                    // document.querySelector("#n").value = '';
+                };
+         */
+
+        let x = document.querySelector("#n");
+        const y = document.querySelector("button");
+        let $p = document.querySelector('p');
+
+        // y.addEventListener("click", () => {
+        //     z = x.value;
+        //     switch (z) {
+        //         case "사과":
+        //             $p = "2000원";
+        //             break;
+        //         case "수박":
+        //             $p = "3000원"
+        //             break;
+        //         case "딸기": 
+        //             $p = "4000원"
+        //             break;
+        //         default:
+        //             $p="없음!";
+        //     };
+
+
+        // });
+
+        /*         y.addEventListener("click", function(){
+                    z = x.value;
+                    out= '';
+                    switch (z) {
+                        case "사과":
+                            out = "2000원";
+                            break;
+                        case "수박":
+                            out = "3000원";
+                            break;
+                        case "딸기": 
+                            out = "4000원";
+                            break;
+                        default:
+                            out="없음!";
+                    };
+                    $p.innerHTML = out;
+        
+                }); */
+        y.addEventListener("click", () => zz());
+        zz = () => {
+
+            z = x.value;
+            out = '';
+            switch (z) {
+                case "사과":
+                    out = "2000원";
+                    break;
+                case "수박":
+                    out = "3000원";
+                    break;
+                case "딸기":
+                    out = "4000원";
+                    break;
+                default:
+                    out = "없음!";
+            };
+            $p.innerHTML = out;
+
+        }
+
+
+    </script>
+</body>
+
+</html>
