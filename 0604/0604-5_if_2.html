@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript prac</title>
+    <style>
+        p:nth-child(2) {
+            background: rgb(255, 211, 218);
+        }
+
+        p:nth-child(3) {
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <p>money: </p>
+    <p></p>
+
+    <script>
+        //  const $p = document.querySelectorAll('p');
+
+        //     let money = prompt('현재 얼마 있습니까?','');
+        //     let result = '';
+        //     if(money>=2000 && money < 3000){
+        //         result = '딸기 드릴께요';
+        //     }else if(money>=3000 && money < 4000){
+        //         result = '포도 드릴께요';
+        //     }else if(money>=4000 && money < 5000){
+        //         result = '수박 드릴께요';
+        //     }else if(money >= 10000){
+        //         result = '이거 다 드릴께요';
+        //     }else{
+        //         result='암것도 안줌!😵'
+        //     }
+
+        //     $p[0].innerHTML += money + '원';
+        //     $p[1].innerHTML = result;
+
+
+        let num1 = prompt('숫자 1 입력', '');
+        let num2 = prompt('숫자 2 입력', '');
+        let num3 = prompt('숫자 3 입력', '');
+
+        let result = '';
+
+        if (num1 >= num2 && num1 >= num3) {
+            result = num1;
+        } else if (num2 >= num1 && num2 >= num3) {
+            result = num2;
+        } else {
+            result = num3;
+        }
+
+        document.write(result);
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript prac</title>
+    <style>
+        p:nth-child(2) {
+            background: rgb(255, 211, 218);
+        }
+        p:nth-child(3) {
+            background: pink;
+        }
+
+    </style>
+</head>
+
+<body>
+    <p>오늘은 딸기, 사과, 수박이 준비되었습니다. 무엇을 드릴까요?</p>
+    <p>손님:  </p>
+    <p>사장님:  </p>
+
+    <script>
+        var fruit = prompt('오늘은 딸기🍓, 사과🍎, 수박🍉이 준비되었습니다. \n무엇을 드릴까요?');
+        var result = '';
+
+        const $p = document.querySelectorAll('p');
+        if (fruit == '딸기') {
+            result = "2500원🍓"
+        } else if (fruit == '사과') {
+            result = "3000원🍎"
+        } else if (fruit == '수박') {
+            result = "3500원🍉";
+        } else {
+            result = "꺼져😐"
+        };
+        var output = '네, ' + result + ' 결제를 도와드리겠습니다.';
+
+        if(result == "꺼져😐" ){
+            var output = '꺼져😐';
+            $p[2].style.backgroundColor = 'skyblue';
+        };
+
+        $p[1].innerHTML += fruit;
+        $p[2].innerHTML += output;
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>수강과목 </p>
+    <p></p>
+    <script>
+        var subject1 = prompt('수강과목을 입력하세요', 'html');
+        subject1 = subject1.toUpperCase()
+        let $p = document.querySelectorAll('p');
+        switch (subject1) {
+            case 'HTML':
+                subject1 += ' 은 1학점 입니다.';
+                break;
+            case 'CSS':
+                subject1 += ' 은 1학점 입니다.';
+                break;
+
+            case 'JAVASCRIPT':
+                subject1 += ' 은 3학점 입니다.';
+                break;
+            default:
+                subject1 += '해당 과목이 없습니다. ';
+        }
+
+        console.log(subject1);
+        $p[0].innerHTML += subject1;
+
+
+    </script>
+</body>
+
+</html>
