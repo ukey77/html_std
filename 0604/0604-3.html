@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript prac</title>
+    <style>
+        p:nth-child(2){
+            background: pink;
+            width: 100px;
+        }
+        aside:nth-child(4){
+            background: lavender;
+            width: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <p>결과는?</p>
+    <p>= </p>
+    <aside>교재 342페이지 실행 결과 표시</aside>
+    <aside>= </aside>
+
+    <script>
+
+        const $p = document.querySelectorAll('p')[1];
+        let age = 20;
+        let fee = '';
+        if (age < 13){
+            fee = '2000원'
+        }else if( age >= 13 && age < 20){
+            fee='4000원'
+        }else{
+            fee='6000원'
+        }
+
+        $p.innerHTML += fee;
+
+        var age2 = prompt('나이입력','');
+        var admissionFee = '';
+        if (age2 < 13 || age2 >= 65){
+            admissionFee = '2000원';
+        }else if( age2 >= 13 && age2 <20){
+            admissionFee = '4000원';
+        }else{
+            admissionFee = '6000원'
+        };
+
+        const $aside = document.querySelectorAll('aside')[1];
+        $aside.innerHTML += admissionFee;
+
+
+    </script>
+</body>
+</html>

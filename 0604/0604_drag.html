@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하단 드래그 앤 드롭</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('images/flower.png'), url('images/dog.png'),
+                linear-gradient(to right, rgba(0, 100, 0, 0), rgba(0, 100, 0, 1));
+
+        }
+
+        #layout {
+            max-width: 1000px;
+            margin: auto;
+            overflow: auto;
+        }
+
+        header {
+            background-color: beige;
+            display: flex;
+            align-items: flex-end;
+            padding: 15px;
+        }
+
+        h1 {
+            padding: 30px;
+            margin: 0 10px;
+            border: 2px solid red;
+        }
+
+        nav {
+            flex: 1;
+            display: flex;
+            background-color: skyblue;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 15px;
+            margin: 0 70px 0 20px;
+        }
+
+        nav>a {
+            border: 1px solid green;
+            width: 70px;
+            text-align: center;
+        }
+
+        main {
+            background-color: blanchedalmond;
+            display: flex;
+            padding: 20px;
+        }
+
+        section {
+            padding: 200px 50px;
+            background-color: burlywood;
+            flex: 2;
+            text-align: center;
+            margin-right: 20px;
+        }
+
+        section ul {
+            text-align: left;
+            border: 2px solid gray;
+            list-style-position: inside;
+        }
+
+        #right {
+            flex: 1.5;
+            background: red url('images/icon.png') repeat-x 0 center/100px;
+        }
+
+        article {
+            background-color: blueviolet;
+            padding: 10px;
+        }
+
+        article b {
+            text-transform: lowercase;
+            letter-spacing: 5px;
+            /*자간*/
+            text-indent: 15px;
+        }
+
+        aside {
+            background-color: chartreuse;
+            padding: 10px;
+            margin-top: 20px;
+            overflow-y: auto;
+            height: 200px;
+        }
+
+        aside p {
+            text-indent: 15px;
+            text-align: justify;
+        }
+
+        footer {
+            background-color: #ddd;
+            padding: 10px;
+            padding-left: 150px;
+        }
+
+        address {
+            background-color: darkseagreen;
+            padding: 10px;
+            max-width: 600px;
+        }
+
+        p {
+            background-color: darkseagreen;
+            margin-top: 10px;
+            padding: 10px;
+            max-width: 600px;
+        }
+
+        audio {
+            max-width: 100%;
+        }
+
+        video {
+            max-width: 100%;
+            height: 400px;
+            border: 2px solid red;
+        }
+
+        /* (0~530픽셀 넓이에서 디자인 적용됨) */
+        @media(max-width:530px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                margin: 10px;
+                width: 97%;
+            }
+
+            main {
+                flex-direction: column;
+            }
+
+            section {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            footer {
+                padding-left: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="layout">
+        <header>
+            <h1 draggable="true">드래그하세요</h1>
+            <nav>
+                <a href="#">메뉴1</a>
+                <a href="#">메뉴2</a>
+                <a href="#">메뉴3</a>
+                <a href="#">메뉴4</a>
+                <a href="#">메뉴5</a>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>콘텐츠 그룹01</h2>
+                <audio controls>
+                    <source src="media/radiant.mp3" type="audio/mpeg">
+                </audio>
+                <video controls>
+                    <source src="media/movie.mp4" type="video/mp4">
+                </video>
+                <p>라인컴퓨터아트학원</p>
+            </section>
+            <section>
+                <h2>콘텐츠 그룹02</h2>
+                <audio controls>
+                    <source src="media/horse.mp3" type="audio/mpeg">
+                </audio>
+                <video controls>
+                    <source src="media/sea.mp4" type="video/mp4">
+                </video>
+                <p>라인컴퓨터아트학원</p>
+            </section>
+            <div id="right">
+                <article>
+                    <h2>주요 기사</h2>
+                    <p> is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
+                        content here', <b>DISTRIBUTION OF LETTERS</b>making it -look like readable</p>
+                </article>
+                <aside>
+                    <h3>광고</h3>
+                    <p>국회는 국정을 감사하거나 특정한 국정사안에 대하여 조사할 수 있으며, 이에 필요한 서류의 제출 또는 증인의 출석과 증언이나 의견의 진술을 요구할 수 있다.</p>
+                </aside>
+            </div>
+        </main>
+        <footer>
+            <address class="ccc"><span draggable="true" id="bbb">경기도 부천시 오정구 삼정동 032)674-5685 coxpub@naver.com</span>
+            </address>
+            <p class="ccc">COPYRIGHT ⓒAll rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        const $h2 = document.querySelector("main section:first-child h2");
+        //alert( $h2 );
+        $h2.innerHTML += "<br><b style='font-size:1.2rem; color:red;'>태그가 추가됨</b>";
+
+        const $p = document.createElement("p");
+        //alert( $p );
+        $h2.after($p); //다음요소 즉 형제요소가 생긴다. before()는 앞에 추가
+        $p.innerHTML = "형제요소가 추가됨.";
+
+        const $h22 = document.querySelector("main section:last-of-type h2");
+        //alert( $h22 );
+        //$h22.before( $p );
+        const $div = document.createElement("div");
+        $h22.before($div);
+        $div.innerHTML = "형제요소가 추가됨.";
+
+        const $pp = document.querySelector("section p");
+        //alert( $pp );
+        const $ul = document.createElement("ul");
+        //alert( $ul );
+        $ul.innerHTML = "<li>딸기</li><li>바나나</li><li>파인애플</li>";
+        $pp.after($ul);
+
+        //드래그이벤트 연습
+        const $h1 = document.querySelector('h1');
+        $h1.addEventListener("dragstart", () => zz(3, 5));
+
+        zz = (i, j) => {
+            let xx = i * j; //15
+            $h1.innerHTML = xx;
+        }
+
+        //콘텐츠그룹01 영역에서 목록태그를 드래그하면 '수박' 항목이 추가된다
+        const $s1 = document.querySelector("section ul");
+
+        //$s1.setAttribute("draggable" , true);
+        $s1.draggable = true;
+        $s1.addEventListener("dragstart", () => uu());
+
+        //<ul>의 마지막 자식요소에 새로운 요소를 추가 
+        uu = () => $s1.innerHTML += "<li>수박</li>";
+
+        //하단 주소를 드래그하여 아래로 옮기기
+        document.addEventListener("dragstart", (e) => e.dataTransfer.setData('zzz', e.target.id));
+
+        document.addEventListener("dragover", (e) => e.preventDefault()); //이동허용
+
+        document.addEventListener("drop", (e) => {
+            const x = e.dataTransfer.getData('zzz');
+            e.target.appendChild(document.getElementById(x));
+        });
+    </script>
+</body>
+
+</html>
