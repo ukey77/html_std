@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: rgb(251, 255, 231);
+        }
+
+        #layout{
+            width: 90vw;
+            margin: 0 auto;
+
+        }
+
+        h3:nth-child(1) {
+            border: 10px double green;
+            border-radius: 40px;
+            text-align: center;
+            width: 200px;
+        }
+
+        h3:nth-of-type(2) {
+            border: 8px dashed pink;
+            width: 200px;
+            border-radius: 40px;
+            text-align: center;
+            padding: 3px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="layout">
+    <h3>야구장입장료</h3>
+    <span>요금 기준 </span>
+    <select id="ba">
+        <option>선택하세요</option>
+        <option value=1>아동</option>
+        <option value=2>청소년</option>
+        <option value=3>성인</option>
+    </select>
+    <p>요금은?</p>
+    <p></p>
+    <hr>
+    <h3>🥭🍌과일선택🍉🍊</h3>
+    <select id="fr">
+        <option>선택하세요</option>
+        <option>사과</option>
+        <option>딸기</option>
+        <option>파인애플</option>
+    </select>
+    <p>얼마게?</p>
+
+</div>
+    <script>
+
+        const x = document.querySelector('#ba');
+        let $p = document.querySelectorAll('p');
+
+        x.addEventListener('change', () => zz());
+
+        zz = () => {
+            // alert(x.value);
+            let y = parseInt(x.value);
+
+
+            switch (y) {
+                case 1: y = "아동은 무료입니다."
+                    break;
+                case 2: y = "청소년은 2,000원 입니다."
+                    break;
+                default:
+                    "성인은 3,000원 입니다."
+                    break;
+
+            };
+            console.log(typeof y);
+            $p[1].innerHTML = y;
+        };
+
+        const y = document.querySelector('#fr');
+        y.addEventListener("change", () => cc());
+
+        cc = () => {
+            let z = (y.selectedIndex);
+
+            switch (z) {
+                case 1:
+                    z = "🍎사과는 처넌🍎"
+                    break;
+                case 2:
+                    z = "🍓딸기는 오처넌🍓"
+                    break;
+                case 3:
+                    z = "🍍파인애플은 사처넌🍍"
+                    break;
+            }
+            $p[2].innerHTML = z;
+
+
+        };
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
