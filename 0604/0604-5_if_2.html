@@ -47,21 +47,48 @@
 
         let result = '';
 
-        if (num1 >= num2 && num1 >= num3) {
-            result = num1;
-        } else if (num2 >= num1 && num2 >= num3) {
-            result = num2;
-        } else {
-            result = num3;
+        // if (num1 >= num2 && num1 >= num3) {
+        //     result = num1;
+        // } else if (num2 >= num1 && num2 >= num3) {
+        //     result = num2;
+        // } else {
+        //     result = num3;
+        // }
+
+        // document.write(result);
+
+
+
+
+// 최대값 구하기
+/*         if(num1 >= num2 && num1>=num3){
+            result=num1;
+        }else if(num2>=num1 && num2 >=num3){
+            result=num2;
+        }else{
+            result=num3;
         }
+        
+        document.write(num1 + '<br>');
+        document.write(num2 + '<br>');
+        document.write(num3 + '<br>');
 
-        document.write(result);
+    document.write('MAX :' + result); */
 
+    // 최소값 구하기
+    if(num1<num2 && num3<num1){
+        result=num1;
+    }else if(num2<num1 && num2 < num3){
+        result=num2;
+    }else{
+        result=num3;
+    }
 
+    document.write(num1 + '<br>');
+        document.write(num2 + '<br>');
+        document.write(num3 + '<br>');
 
-
-
-
+    document.write('min :' + result);
 
 
     </script>
