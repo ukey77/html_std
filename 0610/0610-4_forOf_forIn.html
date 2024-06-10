@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>forOf forIn</title>
+    <style>
+        footer{
+            background: pink;
+        }
+        footer:nth-of-type(2){
+            background: rgb(255, 233, 208);
+        }
+    </style>
 </head>
 <body>
     <ol>
@@ -12,22 +20,32 @@
         <li>대전</li>
         <li>부산</li>
     </ol>
-    <footer>결과 표시 하는 곳</footer>
+    <footer>forIn 결과 표시 하는 곳</footer>
+    <footer>forOf 결과 표시 하는 곳</footer>
     <script>
-        const city = ['서울','대구','대전','부산'];
+        const city = document.querySelectorAll('ol li');
+        const fter = document.querySelectorAll('footer');
+
+
         // forIn : index번호를 get
-        console.log('forIn---');
-        for(const i in city){
-            console.log(i);
-        };
+        // console.log('forIn---');
+        // for(const i in city){
+        //     console.log(i);
+        //     fter[0].innerHTML += '<br>' + i;
+        // };
         
         // forOf : 항목내용을 get
-        console.log('forOf---');
+/*         for(const i of city){
+            console.log(i)
+            fter[1].innerHTML += '<br>' + i.innerHTML;
+        }
+ */
+
+        let x = '';
         for(const i of city){
-            console.log(i);
-        };
-
-
+            x += i.innerHTML + ' ,';
+        }
+        fter[1].innerHTML = x;
 
     </script>
 </body>
