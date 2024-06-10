@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 내리면 길어진다</title>
+    <style>
+     
+        body {
+            height: 200vh;
+            background-image: linear-gradient(yellowgreen, yellow, orange);
+        }
+
+        div {
+            background-color: pink;
+            padding: 10px;
+            border-radius: 20px;
+            position: fixed;
+            width: 20px;
+            height: 50px;
+            overflow: hidden;
+            transition: 2s;
+        }
+
+        div.long {
+            width: 70%;
+        }
+
+        div nav {
+            /* display: flex; */
+            /* justify-content: flex-start; */
+            /* flex-wrap: wrap; */
+            width: 450px;
+            margin-left: 50px;
+            margin-top: 15px;
+        }
+
+        nav a {
+            padding: 5px 20px;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 5px;
+            width: 100px;
+            height: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h3>스크롤에 따른 디자인 변화</h3>
+    <div>
+        <nav>
+            <a href="https://naver.com">네이버</a>
+            <a href="https://apple.com">애플</a>
+            <a href="https://adobe.com">어도비</a>
+        </nav>
+    </div>
+
+    <script>
+        const $div = document.querySelector('div');
+        window.addEventListener('scroll', () => long());
+
+        long = () => {
+            const t = window.pageYOffset;
+            if (t > 100) {
+                $div.classList.add('long');
+            } else {
+                $div.classList.remove('long');
+            }
+        }
+
+        const w=window.innerWidth;
+
+        if(w <= 550){
+            $div.classList.add('long');
+        }
+    </script>
+</body>
+
+</html>
