@@ -40,30 +40,7 @@
     <h1>스크롤을 내렸다가 다시 올려보세요.</h1>
 
     <script>
-        const h1En = document.querySelector('h1');
-        // window.addEventListener("scroll",()=>{
-        //     const offX = window.pageYOffset;
-        //     if(offX>300){
-        //         h1En.classList.add('up');
-        //     }else{
-        //         h1En.classList.remove('up');
-        //     }
-        // });
 
-        window.addEventListener("scroll",() => change());
-
-        change = () => {
-            let i = window.pageYOffset;
-            i = Math.round(i);
-            console.log(i);
-
-            if(i>100){
-                h1En.classList.add('up');
-            }else{
-                h1En.classList.remove('up');
-
-            }
-        }
     </script>
 </body>
 </html>
