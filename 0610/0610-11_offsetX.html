@@ -3,44 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마우스 휠/스크롤에 따른 디자인 변경</title>
+    <title>윈도우 너비 감지하기</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        div{
+            position: relative;
+            left: 0;
+            transition: 2s;
+            width: 200px;
+            background-color: lavender;
+            padding: 10px;
+            border-radius: 20px;
         }
-        body{
-            height: 200vh;
-            background: linear-gradient(#EAE4C7,#C6DEBF,#74ac85);
-        }
-        h1{
-            position: fixed;
-            left: 50%;
-            top: 100px;
-            width: 650px;
-            transform: translateX(-50%);
-            background-color: hsl(152, 100%, 93%);
-            padding: 30px;
-            border: 10px solid rgb(71, 233, 71);
-            text-align: center;
-            border-radius: 100px 100px 0 0 ;
-            transition: 0.5s;
-        }
-        h1.up{
-            top: 0;
-            border-radius: 0 0 100px 100px;
-            border: 10px double rgb(25, 240, 255);
-            background-color: #426eff;
-            color: #fff;
+        div.move{
+            left: 2000px;
         }
     </style>
 </head>
 <body>
-    <h1>스크롤을 내렸다가 다시 올려보세요.</h1>
+    <h3>현재의 윈도우 넓이는?</h3>
+    <p>윈도우넓이 표시하는 곳</p>
+    <div>윈도우 넓이가 500보다 작아지면
+    이 부분은 오른쪽으로 사라진다.
+    </div>
 
     <script>
+        const $p = document.querySelector('p');
+        const $div = document.querySelector('div');
 
-    </script>
+        window.addEventListener("resize", () => mu());
+
+        mu = () => {
+            // console.log(window.innerWidth);
+            const w = window.innerWidth;
+            if(w>500){
+                $div.classList.add('move');
+            }else{
+                $div.classList.remove('move');
+
+            }
+        }
+        
+</script>
 </body>
 </html>
