@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forOf forIn</title>
+    <style>
+        footer {
+            background: pink;
+        }
+
+        footer:nth-of-type(2) {
+            background: rgb(255, 233, 208);
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>서울</li>
+        <li>대구</li>
+        <li>대전</li>
+        <li>부산</li>
+    </ol>
+    <footer>결과 표시 하는 곳</footer>
+    <script>
+        const city = document.querySelectorAll('ol li');
+        const fter = document.querySelectorAll('footer');
+const num = [1,2,3];
+num.forEach(function(value,index,array){
+    console.log(value); // 1,2,3
+    console.log(index); // 0,1,2
+    console.log(array); // [1,2,3]
+});
+
+    </script>
+</body>
+
+</html>

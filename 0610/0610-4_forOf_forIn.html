@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>forOf forIn</title>
     <style>
-        footer{
+        footer {
             background: pink;
         }
-        footer:nth-of-type(2){
+
+        footer:nth-of-type(2) {
             background: rgb(255, 233, 208);
         }
     </style>
 </head>
+
 <body>
     <ol>
         <li>서울</li>
@@ -33,20 +36,22 @@
         //     console.log(i);
         //     fter[0].innerHTML += '<br>' + i;
         // };
-        
+
         // forOf : 항목내용을 get
-/*         for(const i of city){
-            console.log(i)
-            fter[1].innerHTML += '<br>' + i.innerHTML;
+        /*        
+         for(const i of city){
+                    console.log(i)
+                    fter[1].innerHTML += '<br>' + i.innerHTML;
         }
- */
+         */
 
         let x = '';
-        for(const i of city){
+        for (const i of city) {
             x += i.innerHTML + ' ,';
         }
         fter[1].innerHTML = x;
 
     </script>
 </body>
+
 </html>
