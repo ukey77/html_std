@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 내리면 길어짐</title>
+    <style>
+        body{
+            height: 200vh;
+            background: linear-gradient(#CEDEEC,#F5B5AA,#F1E3DE);
+        }
+        div {
+            position: fixed;
+            transition: 2s;
+            width: 200px;
+            background-color: lavender;
+            padding: 10px;
+            border-radius: 20px;
+        }
+        div.long{
+           width: 100%;
+           background-color: #498299;
+           color: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h3>스크롤에 따른 디자인 변화</h3>
+    <div>
+        이 부분이 길어짐
+    </div>
+    <script>
+
+        const $div = document.querySelector('div');
+
+        window.addEventListener("scroll",()=>change());
+
+        change=()=>{
+            let offY = window.pageYOffset;
+            if(offY > 100){
+                $div.classList.add('long');
+            }else{
+                $div.classList.remove('long');
+            }
+
+        };  
+
+
+
+    </script>
+</body>
+
+</html>
