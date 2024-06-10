@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 휠/스크롤에 따른 디자인 변경</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 200vh;
+            background: linear-gradient(#EAE4C7,#C6DEBF,#74ac85);
+        }
+        h1{
+            position: fixed;
+            left: 50%;
+            top: 100px;
+            width: 650px;
+            transform: translateX(-50%);
+            background-color: hsl(152, 100%, 93%);
+            padding: 30px;
+            border: 10px solid rgb(71, 233, 71);
+            text-align: center;
+            border-radius: 100px 100px 0 0 ;
+            transition: 0.5s;
+        }
+        h1.up{
+            top: 0;
+            border-radius: 0 0 100px 100px;
+            border: 10px double rgb(25, 240, 255);
+            background-color: #426eff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>스크롤을 내렸다가 다시 올려보세요.</h1>
+
+    <script>
+        const h1En = document.querySelector('h1');
+        window.addEventListener("scroll",()=>{
+            const offX = window.pageYOffset;
+            if(offX>300){
+                h1En.classList.add('up');
+            }else{
+                h1En.classList.remove('up');
+            }
+        });
+
+    </script>
+</body>
+</html>
