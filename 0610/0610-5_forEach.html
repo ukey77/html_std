@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>forOf forIn</title>
+    <title>forEach-1</title>
     <style>
         footer {
             background: pink;
@@ -18,21 +18,21 @@
 
 <body>
     <ol>
-        <li>서울</li>
-        <li>대구</li>
-        <li>대전</li>
-        <li>부산</li>
+        <li>2500원</li>
+        <li>4700원</li>
+        <li>3300원</li>
+        <li>5200원</li>
     </ol>
     <footer>결과 표시 하는 곳</footer>
     <script>
         const city = document.querySelectorAll('ol li');
         const fter = document.querySelectorAll('footer');
-const num = [1,2,3];
-num.forEach(function(value,index,array){
-    console.log(value); // 1,2,3
-    console.log(index); // 0,1,2
-    console.log(array); // [1,2,3]
-});
+        const num = ['딸기','사과','수박'];
+        num.forEach(function(value,index,array){
+            console.log(value); // 1,2,3
+            console.log(index); // 0,1,2
+            console.log(array); // [1,2,3]
+        });
 
     </script>
 </body>

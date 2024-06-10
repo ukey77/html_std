@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach문과 DOM</title>
+    <style>
+        footer {
+            background: rgb(255, 205, 213);
+        }
+
+        footer:nth-of-type(2) {
+            background: rgb(255, 233, 208);
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>2500원</li>
+        <li>4700원</li>
+        <li>3300원</li>
+        <li>5200원</li>
+    </ol>
+    <footer>결과 표시 하는 곳</footer>
+    <footer></footer>
+    <script>
+        const llmn = document.querySelectorAll('ol li')
+        let fter = document.querySelectorAll('footer');
+/*         llmn.forEach(function(i,j){
+            // console.log(i.innerText);
+            const z = i.innerHTML
+            fter.innerHTML += '<br>' + z;
+        }); */
+
+        //  화살표 함수로 전환
+        llmn.forEach((i,j) => {
+            // console.log(i.innerText);
+            let z = parseInt(i.innerHTML);
+            fter[0].innerHTML += '<br>'+ j + '의 값은 ' + z;
+
+            // 숫자+문자 조합에서 문자를 삭제하고 숫자(string)을 Number형으로 변환
+           
+        }); 
+
+    </script>
+</body>
+
+</html>
