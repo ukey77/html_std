@@ -4,32 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>select_복습01</title>
+    <title>select_복습02</title>
     <style>
         h2{
-            color: rgb(255, 123, 0);
+            color: rgb(184, 89, 0);
         }
         select{
             width: 150px;
-            border: 1px solid rgb(248, 170, 0);
+            border: 2px solid rgb(248, 170, 0);
             /* background: orange; */
             /* color: #fff; */
             border-radius: 20px;
             padding: 5px 0;
+            
         }
+
 
     </style>
 </head>
 
 <body>
     <section id="menu">
-        <h2>선호음식유형</h2>
+        <h2>선호음식유형🍑</h2>
         <select>
             <option>유형선택</option>
-            <option value="1">한식</option>
-            <option value="2">일식</option>
-            <option value="3">중식</option>
-            <option value="4">퓨전식</option>
+            <option>한식</option>
+            <option>일식</option>
+            <option>중식</option>
+            <option>퓨전식</option>
         </select>
     </section>
     <p>결과표시부분</p>
@@ -41,27 +43,7 @@
         slct.addEventListener("change", () => eat());
 
         eat = () => {
-            // alert(typeof slct.value);
-            let output = '';
-            const i = parseInt(slct.value)
-            price=[1000,3000,2000,4000];
-            switch (i) {
-                case 1:
-                    output = '한식' ;
-                    break;
-                case 2:
-                    output = '일식' ;
-                    break;
-                case 3:
-                    output = '중식';
-                    break;
-                case 4:
-                    output = '퓨전식';
-                    break;
-
-            }
-
-            result[1].innerHTML = output + '은 ' + price[i-1] + '원 입니다.';
+           alert(slct.selectedIndex);
         };
 
 
