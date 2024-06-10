@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(tomato,gold,green);
+            margin-bottom: 20px;
+            border-radius: 50%;
+            animation: move 4s infinite;
+        }
+
+        @keyframes move{
+            from{left: 0;top: 0;}
+            25%{left: 500px;top: 0;}
+            50%{left: 500px;top: 500px;}
+            75%{left: 0px;top: 500px;}
+            to{left: 0;top: 0;}
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+<!-- 
+    animation-iteration : 몇번 반복할 것인가? (기본값: 1)
+
+    animation-direction: 어떤 방향으로 애니메이션을 실행할것인가?
+    - normal : 기본값, 정방향
+    - reverse : 거꾸로
+    - alternate : 반복적
+    - alternate-reverse : 거꾸로 시작하여 반복
+
+    animation-fill-mode: 애니메이션이 재생되지 않을때 보여줄 모습 설정
+    - backwards
+    - forwards(마지막 모습으로 남기를 원할때 사용)
+    - both (애니메이션이 시작되기 전에는 backwards와 같이 첫 번째 키프레임의 스타일을 적용하고, 애니메이션이 끝난 후에는 forwards와 같이 마지막 키프레임의 스타일을 유지)
+
+    animation-play-state
+    div:nth-child(1):hover{
+        animation-play-state: paused; // hover했을때 일시정지!ㄴ
+    }
+
+
+    animation-timing-function:
+    - ease : 기본값
+    실행 속도 곡선 조절
+
+-->
