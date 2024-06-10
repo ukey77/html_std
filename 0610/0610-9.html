@@ -4,8 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>스크롤에 반응하여 색 변경하기</title>
+    <style>
+        body{
+            height: 200vh;
+            background: linear-gradient(pink,skyblue,lavender);
+        }
+        #x{
+            position: fixed;
+            top: 100px;
+            background: rgb(13, 0, 197);
+            height: 50px;
+            margin-top: 100px;
+            width: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: 2s;
+            border-radius: 50px;
+        }
+        #x.on{
+            background: rgb(61, 255, 87);
+            top: 0;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>마우스 휠(스크롤)을 움직이세요</h1>
+    <div id="x">
+        
+    </div>
+    <script>
+        const b = ['wheel','scroll']; // 2개 이상의 이벤트 감지 목적
+        const x = document.querySelector('#x');
+        for(const i of b){
+            window.addEventListener(i, ()=> {
+                // document.querySelector('#x').classList.add('on');
+                console.log(window.pageYOffset);
+                const y = window.pageYOffset;
+
+                if(y>300){
+                    x.classList.add('on');
+                }else{
+                    x.classList.remove('on');
+                }
+            }
+        );
+        };
+
+
+        // window.addEventListener("wheel", () => {
+        //         document.querySelector('#x').classList.add('on');
+        //     }
+        // )
+    </script>
 </body>
 </html>
