@@ -6,20 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>select_복습02</title>
     <style>
-        h2{
+        h2 {
             color: rgb(184, 89, 0);
         }
-        select{
+
+        select {
             width: 150px;
             border: 2px solid rgb(248, 170, 0);
             /* background: orange; */
             /* color: #fff; */
             border-radius: 20px;
             padding: 5px 0;
-            
+
         }
-
-
     </style>
 </head>
 
@@ -43,7 +42,13 @@
         slct.addEventListener("change", () => eat());
 
         eat = () => {
-           alert(slct.selectedIndex);
+            //    alert(typeof slct.selectedIndex); // number
+            const idx = slct.selectedIndex;
+            // alert(slct[idx].innerHTML);
+            let out = slct[idx].innerText;
+            // alert(out);
+            result[1].innerHTML = '고객님은 ' + out + '유형을 선택하셨습니다.'
+
         };
 
 
