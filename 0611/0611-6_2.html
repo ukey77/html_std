@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval()메소드-2</title>
+    <style>
+        * {
+            background: rgb(22, 22, 22);
+        }
+
+        div {
+            margin-top: 20px;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(gold, rgb(230, 229, 184), gold);
+            border-radius: 50%;
+            box-shadow: 2px 2px 5px #9d9d9d;
+        }
+
+        #cut-diamond {
+            position: relative;
+            border-style: solid;
+            border-color: transparent transparent rgb(192, 227, 255) transparent;
+            border-width: 0 25px 25px 25px;
+            height: 0;
+            width: 50px;
+            box-sizing: content-box;
+            position: relative;
+            margin: 20px 0 50px 0;
+        }
+
+        #cut-diamond:after {
+            content: "";
+            position: absolute;
+            top: 25px;
+            left: -25px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: rgb(219, 248, 255) transparent transparent transparent;
+            border-width: 70px 50px 0 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <footer id="cut-diamond"></footer>
+
+    <script>
+        const $div = document.querySelector("div");
+        const $footer = document.querySelector("footer");
+        let i = 0; // 초기 위치 설정
+        let increment = true; // 이동 방향 설정 (true: 증가, false: 감소)
+
+        setInterval(() => m(), 10); // 0.01초마다 m() 함수 호출
+
+        m = () => {
+            // 이동 방향이 증가(increment가 true)일 때
+            if (increment) {
+                i++; // i를 증가시킵니다.
+                // i가 500에 도달하면 이동 방향을 감소로 변경합니다.
+                if (i === 500) {
+                    increment = false;
+                }
+            }
+            // 이동 방향이 감소(increment가 false)일 때
+            else {
+                i--; // i를 감소시킵니다.
+                // i가 0에 도달하면 이동 방향을 증가로 변경합니다.
+                if (i === 0) {
+                    increment = true;
+                }
+            }
+
+            // 요소를 이동합니다.
+            $div.style.left = i + 'px';
+            $footer.style.left = i + 'px';
+            $footer.style.top = i + 'px';
+        };
+
+
+
+    </script>
+</body>
+
+</html>
