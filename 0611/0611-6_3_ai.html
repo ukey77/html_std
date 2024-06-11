@@ -53,47 +53,29 @@
     <script>
         const $div = document.querySelector("div");
         const $footer = document.querySelector("footer");
-        let i = 0; // 초기 위치 설정
-        let increment = true; // 이동 방향 설정 (true: 증가, false: 감소)
+        let i = 0;
+        let increment = true;
 
-        setInterval(() => m(), 10); // 0.01초마다 m() 함수 호출
+        setInterval(() => m(), 10);
 
         m = () => {
-/*             // 이동 방향이 증가(increment가 true)일 때
+
             if (increment) {
-                i++; // i를 증가시킵니다.
-                // i가 500에 도달하면 이동 방향을 감소로 변경합니다.
-                if (i === 500) {
+                i++;
+                if (i == window.innerWidth) {
                     increment = false;
                 }
-            }
-            // 이동 방향이 감소(increment가 false)일 때
-            else {
-                i--; // i를 감소시킵니다.
-                // i가 0에 도달하면 이동 방향을 증가로 변경합니다.
-                if (i === 0) {
+            } else {
+                i--;
+                if (i == 0) {
                     increment = true;
                 }
             }
 
-            // 요소를 이동합니다. */
-
-            if (increment){
-                i++;
-                if(i == 500){
-                    increment = false;
-                }
-            }else{
-                i--;
-                if(i == 0){
-                    increment=true;
-                }
-            }
-
-            
             $div.style.left = i + 'px';
             $footer.style.left = i + 'px';
             $footer.style.top = i + 'px';
+
         };
 
 
