@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            position: relative;
+        }
+        p{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(aqua 10%,dodgerblue);
+        }
+        p:nth-of-type(2){
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(pink 10%,tomato);
+        }
+        p:nth-of-type(3){
+            background: radial-gradient(rgb(255, 252, 232) 10%,orange);
+        }
+        p:nth-of-type(4){
+            position: relative;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(rgb(227, 255, 239) 10%,rgb(0, 104, 64));
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+
+        }
+        div{
+            position: absolute;
+            right: 0;
+            margin-top: 320px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(aqua 10%,dodgerblue); 
+        }
+    </style>
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p>🎈기준🎃</p>
+    <div></div>
+
+    <script>
+
+        const $p = document.querySelector('p');
+        const $p2=document.querySelectorAll('p')[1];
+        const $p3=document.querySelectorAll('p')[2];
+        const $p4=document.querySelectorAll('p')[3];
+        let pWth = parseInt(window.getComputedStyle($p).width)
+        setInterval(() => move(),20);
+        let i = 10; // 재할당 필요
+        let sp=5;
+        let j=true;
+
+        move = () => {
+            // console.log(j);
+
+            if(j){
+                i += sp;
+                if(i>=window.innerWidth - $p.offsetWidth && i>=window.innerHeight - $p.offsetHeight) j=false;
+            }else{
+                i -= sp;
+                if(i==0) j=true;
+            }
+
+            $p.style.marginLeft = i + 'px';
+            $p2.style.marginTop=i+'px';
+            $p2.style.marginLeft=i+'px';
+            $p3.style.marginTop=i+'px';
+            // $p4.style.marginLeft=i+'px';
+        };
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
