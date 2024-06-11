@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>콜백함수</title>
+</head>
+<body>
+    <h1>콜백함수는 다른함수와 병렬로 실행되는 비동기 함수에 활용됨</h1>
+    <h2>세개의 인수를 통해 콜백함수를 공부하자</h2>
+    <p></p>
+
+
+<script>
+    const $p = document.querySelector('p');
+    x = t => $p.innerHTML = t; // ...4번쨰로 실행
+
+    y = (i,j,c) => { //...2번째로 실행되는 부분
+        let t = `${i}과 ${j}을 곱하여 ${i*j}가 되었다`;
+        c(t); //...콜백함수 부분 3번째로 실행
+    };
+    y(5,3,x); // ... 1번째로 실행
+
+
+
+
+</script>
+</body>
+
+</html>
