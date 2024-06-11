@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval()메소드-2</title>
+    <style>
+        *{
+            background: rgb(22, 22, 22);
+        }
+        div{
+            margin-top: 20px;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(gold,rgb(230, 229, 184),gold);
+            border-radius: 50%;
+            box-shadow: 2px 2px 5px #9d9d9d; 
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+        <script>
+            const $div = document.querySelector("div");
+            let i = 10; //재할당됨 (++)
+            setInterval( ()=>m(),10); //0.01초마다 m()함수 호출
+            m = () => {
+                i++;
+                if(i>500) i =0;
+                $div.style.left = i +'px';
+
+            };
+
+
+    </script>
+</body>
+
+</html>

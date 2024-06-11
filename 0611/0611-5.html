@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval()</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background: pink;
+            text-align: center;
+        }
+
+        h2 {
+            background: rgb(255, 246, 198);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <h2></h2>
+
+    <script>
+        const $h1 = document.querySelector('h1');
+        const $h2 = document.querySelector('h2');
+        let days = ['일', '월', '화', '수', '목', '금', '토']
+
+        setInterval(() => x(), 1000);
+        x = () => {
+            const d = new Date();
+            // alert(d.getHours());
+            // alert(d.getMinutes());
+            // console.log(d.getSeconds());
+            // let days = ['일','월','화','수','목','금','토']
+            let i = days[d.getDay()];
+            $h2.innerHTML = `오늘의 날짜는 ${i}요일입니다`;
+            $h1.innerHTML =
+                `⏰ 지금 시각은 ⏰<br> 
+            ${d.getHours()}시 ${d.getMinutes()}분 ${d.getSeconds()}초 입니다
+            `
+        };
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
