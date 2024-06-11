@@ -1,34 +1,65 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        body {
             margin: 0;
             overflow: hidden;
         }
-        #ball{
+
+        #ball {
             position: absolute;
             top: 10%;
             left: 0;
-            width: 200px;
-            height: 200px;
-            background-color: pink;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(rgb(216, 255, 216) 10%, rgb(16, 104, 16));
             border-radius: 50%;
         }
+
+        #heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+        }
+
+        #heart:before,
+        #heart:after {
+            position: absolute;
+            content: "";
+            left: 50px;
+            top: 0;
+            width: 50px;
+            height: 80px;
+            background: rgb(255, 113, 136);
+            border-radius: 50px 50px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        #heart:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
     </style>
 </head>
+
 <body>
     <div id="ball"></div>
+    <p id="heart"></p>
     <script>
 
         const ball = document.getElementById('ball');
 
         let po = 0; // 현재위치
         let di = 1; // 오른쪽 방향 이동으로 1, 왼쪽 방향 이동은 -1
-        const sp = 4; //공이 움직이는 속도
+        const sp = 2; //공이 움직이는 속도
 
         const move = () => {
 
@@ -37,18 +68,40 @@
 
             po += di * sp;
 
-            if(po + bw >= ww || po <= 0){
+            if (po + bw >= ww || po <= 0) {
                 di *= -1;
             }
 
             ball.style.left = po + 'px';
 
+        };
+
+        setInterval(move, 10);
+
+
+        // 하트이동
+
+
+        const heart = document.getElementById('heart');
+
+        const move1 = () => {
+
+            const ww = window.innerWidth;
+            const bw = ball.offsetWidth;
+
+            po += di * sp;
+
+            if (po + bw >= ww || po <= 0) {
+                di *= -1;
+            }
+
+            heart.style.top = po + 'px';
 
         };
 
-        setInterval( move, 10 );
-
+        setInterval(move1, 10);
 
     </script>
 </body>
+
 </html>
