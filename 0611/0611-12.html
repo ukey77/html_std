@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            overflow: hidden;
+        }
+        #ball{
+            position: absolute;
+            top: 10%;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="ball"></div>
+    <script>
+
+        const ball = document.getElementById('ball');
+
+        let po = 0; // 현재위치
+        let di = 1; // 오른쪽 방향 이동으로 1, 왼쪽 방향 이동은 -1
+        const sp = 4; //공이 움직이는 속도
+
+        const move = () => {
+
+            const ww = window.innerWidth;
+            const bw = ball.offsetWidth;
+
+            po += di * sp;
+
+            if(po + bw >= ww || po <= 0){
+                di *= -1;
+            }
+
+            ball.style.left = po + 'px';
+
+
+        };
+
+        setInterval( move, 10 );
+
+
+    </script>
+</body>
+</html>
