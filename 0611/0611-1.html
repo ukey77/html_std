@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            /* margin: 0; */
+            /* padding: 0; */
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 200vh;
+            background: #ececec;
+            padding: 20px;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        #x {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+        }
+
+        #x.gra {
+            background: radial-gradient(transparent 5%, rgb(205, 214, 255), rgb(65, 109, 255));
+            animation: rara 3s both;
+        }
+
+        @keyframes rara {
+            from {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            to {
+                transform: scale(30);
+                opacity: 0;
+            }
+        }
+
+        article {
+            position: fixed;
+            left: 50%;
+            top: 20%;
+            transform: translate(-50%);
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            box-shadow: 3px 3px 10px #333;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+        }
+
+
+
+        article button {
+            position: absolute;
+            left: 75%;
+            top: 80%;
+            padding: 5px 12px;
+            background: #333;
+            color: #fff;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>시작화면 애니메이션</h3>
+    <div id="x" class="gra"></div>
+    <section>
+        <h3>한글입숨</h3>
+        <p>대법관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다. 모든 국민은 고문을 받지 아니하며, 형사상 자기에게 불리한 진술을 강요당하지 아니한다. 국가원로자문회의의 조직·직무범위
+            기타 필요한 사항은 법률로 정한다. 선거와 국민투표의 공정한 관리 및 정당에 관한 사무를 처리하기 위하여 선거관리위원회를 둔다. 대한민국의 국민이 되는 요건은 법률로 정한다. 국회는 국가의
+            예산안을 심의·확정한다. 체포·구속·압수 또는 수색을 할 때에는 적법한 절차에 따라 검사의 신청에 의하여 법관이 발부한 영장을 제시하여야 한다. 다만, 현행범인인 경우와 장기 3년 이상의 형에
+            해당하는 죄를 범하고 도피 또는 증거인멸의 염려가 있을 때에는 사후에 영장을 청구할 수 있다.</p>
+
+        <p>모든 국민은 헌법과 법률이 정한 법관에 의하여 법률에 의한 재판을 받을 권리를 가진다. 법률이 정하는 주요방위산업체에 종사하는 근로자의 단체행동권은 법률이 정하는 바에 의하여 이를 제한하거나
+            인정하지 아니할 수 있다. 공무원인 근로자는 법률이 정하는 자에 한하여 단결권·단체교섭권 및 단체행동권을 가진다. 감사원의 조직·직무범위·감사위원의 자격·감사대상공무원의 범위 기타 필요한 사항은
+            법률로 정한다. 제2항과 제3항의 처분에 대하여는 법원에 제소할 수 없다. 비상계엄이 선포된 때에는 법률이 정하는 바에 의하여 영장제도, 언론·출판·집회·결사의 자유, 정부나 법원의 권한에
+            관하여 특별한 조치를 할 수 있다.</p>
+
+        <p>언론·출판에 대한 허가나 검열과 집회·결사에 대한 허가는 인정되지 아니한다. 대통령·국무총리·국무위원·행정각부의 장·헌법재판소 재판관·법관·중앙선거관리위원회 위원·감사원장·감사위원 기타 법률이
+            정한 공무원이 그 직무집행에 있어서 헌법이나 법률을 위배한 때에는 국회는 탄핵의 소추를 의결할 수 있다. 저작자·발명가·과학기술자와 예술가의 권리는 법률로써 보호한다. 헌법개정안이 제2항의
+            찬성을 얻은 때에는 헌법개정은 확정되며, 대통령은 즉시 이를 공포하여야 한다. 재산권의 행사는 공공복리에 적합하도록 하여야 한다. 국가의 세입·세출의 결산, 국가 및 법률이 정한 단체의
+            회계검사와 행정기관 및 공무원의 직무에 관한 감찰을 하기 위하여 대통령 소속하에 감사원을 둔다.</p>
+
+    </section>
+    <article>
+        <h4>팝업부분</h4>
+        <button type="button">닫기</button>
+    </article>
+    <button class="opnBtn" type="button">팝업열기</button>
+
+    <!-- script -->
+    <script>
+        const x = document.getElementById('x');
+        const artcl = document.querySelector('article');
+        const clsBtn = document.querySelector('button');
+
+        setTimeout(() => off(), 2000);
+        off = () => {
+            x.style.display = 'none';
+            artcl.style.display = 'block';
+        };
+
+        setInterval(checkStaus,100);
+
+        clsBtn.addEventListener("click", () => {
+            artcl.style.display = 'none';
+        });
+        let opnBtn = document.querySelector('.opnBtn');
+
+        opnBtn.addEventListener("click",()=>{
+            artcl.style.display = 'block';
+        });
+
+        // console.log(artclStyl);
+
+        function checkStaus() {
+         let artclStyl = window.getComputedStyle(artcl).display;
+            if (artclStyl == 'none') {
+                opnBtn.style.display = 'block';
+            } else if(artclStyl == 'block'){
+                opnBtn.style.display = 'none';
+            }
+        };
+
+
+    </script>
+</body>
+
+</html>
