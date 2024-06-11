@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Img move</title>
+</head>
+<body>
+  <img id="one" src="run1.png">
+  <script>
+      /*
+        index를 계속 증가
+        만약 index가 3이면 index를 0으로
+        document.querySelctor('이미지').src = 이미지소스(index이용)
+
+        mLeft를 계속 증가
+        document.querySelctor('이미지').style.marginLeft = mLeft
+      */
+
+    let data = ['run1.png','run2.png','run3.png'];
+
+    let index = 0;
+    let mLeft = 0;
+
+    let move = setInterval(function(){
+      index++;
+      if(index == 3) index = 0;
+
+      document.querySelector('#one').src = data[index];
+
+      mLeft = mLeft + 10;
+      document.querySelector('#one').style.marginLeft = mLeft + 'px';
+    },100);
+
+    
+  </script>
+</body>
+</html>
