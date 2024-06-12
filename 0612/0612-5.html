@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      /* border: 1px solid blue; */
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 50px;
+      background: skyblue;
+    }
+    img {
+      position: absolute;
+      width: 40%;
+      display: inline-block;
+      /* border: 1px solid red; */
+      top: 40%;
+      left: 0;
+    }
+    h2{
+      margin-bottom: 20px;
+    }
+    button {
+      width: 130px;
+      height: 40px;
+      background: #fff;
+      border-radius: 10px;
+      font-size: 1.3rem;
+    }
+
+    button:nth-of-type(2) {
+      border-radius: 10px;
+      color: #fff;
+      background: #000;
+      margin-left: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>달리는</h1>
+  <section id="bulb">
+    <h2>닌자고양이</h2>
+    <button type="button">😽 Back 🚶‍♂️</button>
+    <button type="button">😼 Go 🏃‍♂️</button>
+    <img src="../imges/run1.png" alt="cat" id="zz">
+
+  </section>
+
+
+  <script>
+
+    const mvBtn = document.querySelectorAll('button');
+    let catImg = document.querySelector('img');
+
+    mvBtn[0].addEventListener("click", function () {
+      setTimeout(function () {
+        let catLeft = parseInt(window.getComputedStyle(catImg).left);
+        let j = catLeft - 20;
+        catImg.src = '../imges/run1.png';
+        catImg.style.left = j + 'px';
+      }, 10)
+
+
+    });
+
+
+    mvBtn[1].addEventListener("click", function () {
+      setTimeout(function () {
+        let catLeft = parseInt(window.getComputedStyle(catImg).left);
+        let j = catLeft + 20;
+        catImg.src = '../imges/run2.png';
+        catImg.style.left = j + 'px';
+      }, 10)
+    });
+
+  </script>
+</body>
+
+</html>

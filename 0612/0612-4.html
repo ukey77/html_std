@@ -21,7 +21,7 @@
     img{
       width: 40%;
       display: block;
-      margin: 0 auto;
+      margin: 30px auto;
     }
     button{
       width: 80px;
@@ -42,15 +42,22 @@
     <section id="bulb">
       <h2>닌자고양이</h2>
       <img src="../imges/run1.png" alt="전구" id="zz">
-      <button type="button" onclick="document.querySelector('#zz').src='../imges/run1.png'">달려라</button>
-      <button type="button" onclick="document.querySelector('#zz').src='../imges/run2.png'">닌자냥</button>
+      <button type="button" onclick="document.querySelector('#zz').src='../imges/run1.png'">닌자냥</button>
+      <button type="button" onclick="document.querySelector('#zz').src='../imges/run2.png'">달려라</button>
     </section>
 
 
     <script>
 
-      
+      const mvBtn = document.querySelectorAll('button');
+      const catImg = document.querySelector('img');
 
+      mvBtn[0].addEventListener(function(){
+        catImg.src = '../imges/run1.png';
+      });
+      mvBtn[1].addEventListener(function(){
+        catImg.src = '../imges/run1.png';
+      });
       
     </script>
 </body>
