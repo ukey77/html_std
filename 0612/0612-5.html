@@ -14,13 +14,15 @@
 
     body {
       position: relative;
-      width: 500px;
-      height: 500px;
-      /* border: 1px solid blue; */
+      width: 700px;
+      height: 700px;
+      border: 5px double blue;
       margin: 0 auto;
       text-align: center;
       padding-top: 50px;
       background: skyblue;
+      margin-top: 30px;
+
     }
     img {
       position: absolute;
@@ -28,7 +30,6 @@
       display: inline-block;
       /* border: 1px solid red; */
       top: 40%;
-      left: 0;
     }
     h2{
       margin-bottom: 20px;
@@ -64,6 +65,7 @@
   <script>
 
     const mvBtn = document.querySelectorAll('button');
+    const boWd = document.querySelector('body').offsetWidth;
     let catImg = document.querySelector('img');
 
     mvBtn[0].addEventListener("click", function () {
@@ -72,6 +74,9 @@
         let j = catLeft - 20;
         catImg.src = '../imges/run1.png';
         catImg.style.left = j + 'px';
+        if(catLeft == 0){
+          catImg.style.left = 0;
+        };
       }, 10)
 
 
@@ -84,6 +89,10 @@
         let j = catLeft + 20;
         catImg.src = '../imges/run2.png';
         catImg.style.left = j + 'px';
+
+        if(catLeft>=boWd){
+          catImg.style.left = 70 + '%';
+        }
       }, 10)
     });
 
