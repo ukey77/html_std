@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <h1>전구 불 켜고 끄기</h1>
+    <section id="bulb">
+      <h2>전구</h2>
+      <button type="button">불켜기</button>
+      <img src="../imges/off.gif" alt="전구">
+      <button type="button">불끄기</button>
+    </section>
+
+
+    <script>
+      const btn = document.querySelectorAll('button');
+      const bImg= document.querySelector('img');
+
+      btn[0].addEventListener("click",function(){
+        bImg.src = "../imges/on.gif";
+      })
+
+      btn[1].addEventListener("click",function(){
+        bImg.src = "../imges/off.gif";
+      })
+
+    </script>
+</body>
+</html>
