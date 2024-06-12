@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공 반복 최종</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #layout{
+      position: relative;
+      max-width: 700px;
+      height: 100vh;
+      border: 5px double pink;
+      margin: 0 auto;
+      background: rgb(255, 243, 245);
+    }
+    h1{
+      text-align: center;
+      color: palevioletred;
+    }
+    #b1,#b2,#b3 {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: gold;
+      border-radius: 50%;
+    }
+    #b1{
+      background: url('../imges/melody.png') -3px  no-repeat; 
+      background-size: cover;
+      left: 50%;
+      top: 50%;
+    }
+    #b2{
+      background: url('../imges/kuromi.png') -3px no-repeat; 
+      background-size: cover;
+      left: 20px;
+      top: 50px;
+    }
+    #b3{
+      background: url('../imges/dog_1.png')  #fffbc1 no-repeat 10px; 
+      background-size: cover;
+      left: 80%;
+      top: 80%;
+    }
+  </style>
+</head>
+<body>
+  <div id="layout">
+    <h1>🎀산리오마을🎀</h1>
+    <div id="b1"></div>
+    <div id="b2"></div>
+    <div id="b3"></div>
+  </div>
+
+  <script>
+    const b1 = document.querySelector('#b1');
+    const b2 = document.querySelector('#b2');
+    const b3 = document.querySelector('#b3');
+    const layWd = document.querySelector('#layout').offsetWidth;
+    const layHd = document.querySelector('#layout').offsetHeight;
+
+
+    let i = 0;
+    let j = 0;
+    let k = 0;
+    let m = 0;
+    let sp = 10; // 속도 조절
+    let sp1 = 10; // 속도 조절
+    let sp2 = 10; // 속도 조절
+    let sp3 = 10; // 속도 조절
+    let bw = b1.offsetWidth;
+
+    setInterval(function(){
+      i+=sp;
+      if(bw + i >= layWd || i <= 0) sp *= -1;
+      b1.style.left= i + 'px';
+      b1.style.top= i + 'px';
+     
+      j+=sp1;
+      if(bw + j >= layHd || j <= 0) sp1 *= -1;
+      b2.style.top= j + 'px';
+      
+      k+=sp2;
+      if(bw + k >= layWd || k<=0) sp2 *= -1;
+      b3.style.left= k + 'px';
+
+      m+=sp3;
+      if(bw + m >= layHd || m<=0) sp3 *= -1;
+      b3.style.top= m + 'px';
+
+    },20);
+
+
+  </script>
+</body>
+</html>

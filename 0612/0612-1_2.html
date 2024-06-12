@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p,div{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(gold,tomato);
+        }
+        div{
+            position: fixed;
+            left: 50%;
+            top: 10px;
+            transform: translate(-50%);
+            box-shadow: 0 0 10px red;
+        }
+    </style>
+</head>
+<body>
+    <p></p>
+    <div></div>
+
+    <!-- script -->
+    <script>
+
+        const $p = document.querySelector('p');
+        const $div = document.querySelector('div');
+
+
+        setInterval(()=>move(), 10);
+
+        let i = 10; // 왼쪽 공 위치
+        let j = 10; // 아래쪽 공 위치
+
+        let sp = 10; // 속도와 관련됨. 숫자를 증가하면 공이 빨라짐
+        let sp1 = 10; // 속도와 관련됨. 숫자를 증가하면 공이 빨라짐
+
+        let ww = window.innerWidth; // 윈도우 너비
+        let pw = $p.offsetWidth; // p 공의 너비
+
+        let wh = window.innerHeight; // 윈도우 높이
+        let dw = $div.offsetWidth;  // div 공의 너비
+
+        const move = () => {
+
+            i += sp; // 오른쪽 방향으로 이동
+
+            // 반대방향으로 리턴
+            if(i + pw >= ww || i <= 0) sp *= -1;
+            $p.style.left = i + 'px';
+
+            j += sp1; // 아래쪽 방향으로 이동
+        
+            if(j + dw >= wh || j <= 0) sp1 *= -1;
+            $div.style.top = j + 'px';
+        }
+
+
+    </script>
+</body>
+</html>

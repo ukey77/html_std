@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>공이 좌우↔,상하↕로 무한반복하는 스크립트</title>
   <style>
-    *{
+    * {
       padding: 0;
       margin: 0;
       box-sizing: border-box;
       background-color: #fffbeb;
     }
-    #layout{
+
+    #layout {
       position: relative;
       max-width: 700px;
       height: 100vh;
@@ -19,32 +21,37 @@
       border: 5px solid orange;
       text-align: center;
     }
-    #b1, #b2{
+
+    #b1,
+    #b2 {
       position: absolute;
       width: 100px;
       height: 100px;
       left: 0;
       top: 0;
-      background: radial-gradient(rgb(255, 102, 0),pink);
+      background: radial-gradient(rgb(255, 102, 0), pink);
       border-radius: 50%;
       box-shadow: 0px 3px 8px #818181;
     }
-    #b1{
+
+    #b1 {
       top: 50px;
       background: url('../imges/emong.png') no-repeat -25px;
       background-size: cover;
 
     }
-    #b2{
+
+    #b2 {
       top: 100px;
       left: 50%;
       transform: translate(-50%);
     }
   </style>
 </head>
+
 <body>
   <div id="layout">
-    <h1>공이 좌우↔ 상하↕로 무한반복하는 스크립트</h1>
+    <h1>공이 layout 안에서 좌우↔ 상하↕로 무한반복하는 스크립트</h1>
     <div id="b1"></div>
     <div id="b2"></div>
   </div>
@@ -55,31 +62,34 @@
 
 
     let i = 0; // 왼쪽 공위치 (X좌표)
-    let sp=10; // speed 속도와 관련 있음, 숫자 증가시 속도 빨라짐
+    let j = 0;
+    let sp = 10; // speed 속도와 관련 있음, 숫자 증가시 속도 빨라짐 (i에 대한 증가)
+    let sp1 = 10; // speed 속도와 관련 있음, 숫자 증가시 속도 빨라짐 (j에 대한 증가)
 
-    let ww=window.innerWidth; // 윈도우 너비
     let bw = $b1.offsetWidth; // b1 공의 너비
+    let layWd = document.querySelector('#layout').offsetWidth;
+    let layHt = document.querySelector('#layout').offsetHeight;
 
-    let wh=window.innerHeight; // 윈도우 높이
+
+    setInterval(() => move(), 10);
 
     const move = () => {
-      i+=sp; // 오른쪽 방향으로 이동
-
-
+      i += sp; // 오른쪽 방향으로 이동
       // 반대방향으로 리턴
-      if(i + bw >= ww || i <= 0) sp *= -1;
+      if (i + bw >= layWd || i <= 0) sp *= -1; // 왼쪽공위치+
       $b1.style.left = i + 'px';
-      $b2.style.top = i + 'px';
 
-
+      j += sp1;
+      if (j + bw >= layHt || j <= 0) sp1 *= -1; // 왼쪽공위치+
+      $b2.style.top = j + 'px';
 
     };
 
-    // setInterval(move, 20);
 
 
 
 
   </script>
 </body>
+
 </html>
