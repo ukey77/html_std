@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공이 좌우↔,상하↕로 무한반복하는 스크립트</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      background-color: #fffbeb;
+    }
+    #layout{
+      position: relative;
+      max-width: 700px;
+      height: 100vh;
+      margin: 0 auto;
+      border: 5px solid orange;
+      text-align: center;
+    }
+    #b1, #b2{
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      left: 0;
+      top: 0;
+      background: radial-gradient(rgb(255, 102, 0),pink);
+      border-radius: 50%;
+      box-shadow: 0px 3px 8px #818181;
+    }
+    #b1{
+      top: 50px;
+      background: url('../imges/emong.png') no-repeat -25px;
+      background-size: cover;
+
+    }
+    #b2{
+      top: 100px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  </style>
+</head>
+<body>
+  <div id="layout">
+    <h1>공이 좌우↔ 상하↕로 무한반복하는 스크립트</h1>
+    <div id="b1"></div>
+    <div id="b2"></div>
+  </div>
+
+  <script>
+    const $b1 = document.querySelector('#b1'); //왼쪽 이동 공
+    const $b2 = document.getElementById('b2'); //아래이동 공
+
+
+    let i = 0; // 왼쪽 공위치 (X좌표)
+    let sp=10; // speed 속도와 관련 있음, 숫자 증가시 속도 빨라짐
+
+    let ww=window.innerWidth; // 윈도우 너비
+    let bw = $b1.offsetWidth; // b1 공의 너비
+
+    let wh=window.innerHeight; // 윈도우 높이
+
+    const move = () => {
+      i+=sp; // 오른쪽 방향으로 이동
+
+
+      // 반대방향으로 리턴
+      if(i + bw >= ww || i <= 0) sp *= -1;
+      $b1.style.left = i + 'px';
+      $b2.style.top = i + 'px';
+
+
+
+    };
+
+    // setInterval(move, 20);
+
+
+
+
+  </script>
+</body>
+</html>
