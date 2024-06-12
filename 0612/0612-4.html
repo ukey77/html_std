@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      width: 500px;
+      height: 500px;
+      border: 1px solid blue;
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 50px;
+    }
+    img{
+      width: 40%;
+      display: block;
+      margin: 0 auto;
+    }
+    button{
+      width: 80px;
+      height: 40px;
+      background: #fff;
+      border-radius: 10px;
+    }
+    button:nth-of-type(2){
+      border-radius: 10px;
+      color: #fff;
+      background: #000;
+    }
+    
+  </style>
+</head>
+<body>
+    <h1>달리는</h1>
+    <section id="bulb">
+      <h2>닌자고양이</h2>
+      <img src="../imges/run1.png" alt="전구" id="zz">
+      <button type="button" onclick="document.querySelector('#zz').src='../imges/run1.png'">달려라</button>
+      <button type="button" onclick="document.querySelector('#zz').src='../imges/run2.png'">닌자냥</button>
+    </section>
+
+
+    <script>
+
+      
+
+      
+    </script>
+</body>
+</html>
