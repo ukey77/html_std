@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열 공부하기</title>
+  <style>
+    p{
+      background-color: gold;
+      width: 30%;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>배열에 대하여</h1>
+  <p></p>
+  <p></p>
+  <p></p>
+
+  <script>
+    const $p = document.querySelectorAll('p');
+    let n1 = [8,4,5,12,'20'];
+    let n2 = Math.max(...n1); // 최댓값 찾기와 전개 연산자
+
+    // Math.max() 함수는 인자로 받은 숫자들 중 가장 큰 값을 반환
+    // spread 문법: 배열을 해체하여 개별 요소로 확장시키는 역할
+
+    $p[0].innerHTML = n2; //20
+
+    let f1 = ['딸기','사과','바나나'];
+    let f2 = [...f1] // 배열복제
+    f2.push('체리');
+    let f3 = ["자몽",...f2,"오렌지","수박"]; // 복제 후 값 추가
+    console.log(f3); //['딸기', '사과', '바나나', '체리', '수박']
+    $p[0].innerHTML = f3; //20
+
+
+
+    
+  </script>
+</body>
+</html>
