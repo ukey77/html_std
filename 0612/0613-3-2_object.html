@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>짝수 홀수</title>
+  <style>
+    * {
+      background: rgb(223, 255, 226);
+    }
+
+    h1 {
+      text-align: center;
+      text-shadow: 1px 1px 3px #2929295c;
+    }
+
+    #imgBox {
+      position: relative;
+      max-width: 650px;
+      /* height: 500px; */
+      border: 5px double rgb(0, 0, 99);
+      margin: 0 auto;
+      background: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    img {
+      vertical-align: top;
+      /*상단 수평정렬*/
+      /* border: 1px solid red; */
+      width: 200px;
+      opacity: 1;
+    }
+
+    img.s {
+      opacity: 0.3;
+      /* border: 5px solid red; */
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 15px;
+      border-radius: 10px;
+      background: #a1ff9e;
+      font-weight: bold;
+    }
+    button:hover{
+      background: #000;
+      color: #fff;
+    }
+    button:nth-of-type(1) {
+      margin-left: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>객체(object)에 대하여</h1>
+  <section id="imgBox">
+    <!-- 이곳에 이미지 배열 들어감 -->
+  </section>
+  <button type="button">짝수만 보이기</button>
+  <button type="button">홀수만 보이기</button>
+  <button type="button">모두 보이기</button>
+  <button type="button">😎홀수깜빡😎</button>
+  <script>
+    let imgBox = document.getElementById('imgBox');
+    const $button = document.querySelectorAll('button');
+
+    const x = ["../imges/1.jpg", "../imges/2.jpg"];
+    const y = ["../imges/3.jpg", "../imges/4.jpg"];
+    const z = ["../imges/5.jpg", "../imges/6.jpg"];
+
+    const xy = [...x, ...y];
+    xy.push(...z);
+
+    xy.forEach((i) => {
+      imgBox.innerHTML += `<img src= "${i}">`
+
+    })
+
+    let $img = document.querySelectorAll('img');
+
+
+    // for (let i = 0; i <= xy.length; i++) {
+    //   if (i % 2 == 0) {
+    //     $img[i].classList.add('s');
+    //     $img[i].style.display='none';
+    //   }
+    // }
+
+    // $img.forEach((i,j)=>{
+    //   if (j % 2 == 0) {
+    //     $img[j].classList.add('s');
+    //     $img[j].style.display='none';
+    //   }
+    // })
+
+    $button[0].addEventListener("click", function () {
+
+      for (let i = 0; i <= xy.length; i++) {
+        if (i % 2 == 0) {
+          $img[i].style.opacity = 0;
+        } else {
+          $img[i].style.opacity = 1;
+        }
+      }
+    })
+    $button[1].addEventListener("click", function () {
+
+      for (let i = 0; i <= xy.length; i++) {
+        if (i % 2 == 1) {
+          $img[i].style.opacity = 0;
+        } else {
+          $img[i].style.opacity = 1;
+        }
+      }
+    })
+
+    $button[2].addEventListener("click", function () {
+      for (let i = 0; i <= xy.length; i++) {
+        $img[i].style.opacity = 1;
+      }
+    })
+
+    $button[3].addEventListener("click", function () {
+      setInterval(function () {
+          for (let i = 0; i <= xy.length; i++) {
+            if (i % 2 == 0) {
+              $img[i].classList.toggle('s');
+            }
+          }
+        }, 1000); 
+    })
+
+  </script>
+</body>
+
+</html>

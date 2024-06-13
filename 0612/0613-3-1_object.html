@@ -32,6 +32,7 @@
       /*상단 수평정렬*/
       /* border: 1px solid red; */
       width: 200px;
+      /* display: none; */
     }
 
     img.s {
@@ -57,44 +58,12 @@
     const xy = [...x, ...y];
     xy.push(...z);
 
-    xy.forEach((i) => {
-      imgBox.innerHTML += `<img src= "${i}">`
 
+    xy.forEach((i)=>{
+        imgBox.innerHTML += `<img src= "${i}">`
     })
 
     let $img = document.querySelectorAll('img');
-
-
-
-        setInterval(function () {
-          for (let i = 0; i <= xy.length; i++) {
-            if (i % 2 == 0) {
-              $img[i].classList.toggle('s');
-            }
-          }
-        }, 2000); 
-
-
-
-    // 연습
-    let num = [6, 2, 3];
-    const fruits = ["apple", "orange", "cherry"];
-
-    /*     zz = (item, index) => {
-          console.log(item,index)
-        }
-    
-        fruits.forEach(zz) */
-    /*
-        let tt = '';
-        fruits.forEach( ( i,j ) => {
-          tt += `${j} : ${i} \n`
-        })
-    
-    
-        console.log(tt);
-     */
-
 
 
   </script>
