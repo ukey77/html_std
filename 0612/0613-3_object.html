@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전개연산자와 배열이미지</title>
+  <style>
+    * {
+      background: rgb(223, 255, 226);
+    }
+
+    h1 {
+      text-align: center;
+      text-shadow: 1px 1px 3px #2929295c;
+    }
+
+    #imgBox {
+      position: relative;
+      max-width: 650px;
+      /* height: 500px; */
+      border: 5px double rgb(0, 0, 99);
+      margin: 0 auto;
+      background: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    img {
+      vertical-align: top;
+      /*상단 수평정렬*/
+      /* border: 1px solid red; */
+      width: 200px;
+    }
+
+    img.s{
+      opacity: 0.2;
+      border: 5px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>객체(object)에 대하여</h1>
+  <section id="imgBox">
+    <!-- 이곳에 이미지 배열 들어감 -->
+  </section>
+
+  <script>
+    let imgBox = document.getElementById('imgBox');
+
+    const x = ["../imges/1.jpg", "../imges/2.jpg"];
+    const y = ["../imges/3.jpg", "../imges/4.jpg"];
+    const z = ["../imges/5.jpg", "../imges/6.jpg"];
+
+    const xy = [...x, ...y];
+    xy.push(...z);
+
+    xy.forEach((i) => {
+      imgBox.innerHTML += `<img src= "${i}">`
+    
+    })
+
+    let $img = document.querySelectorAll('img');
+
+    for (let i = 0; i <= xy.length; i++) {
+        if (i % 2 == 0) {
+          $img[i].classList.add('s');
+        }
+      }
+
+
+
+
+
+    // 연습
+    let num = [6, 2, 3];
+    const fruits = ["apple", "orange", "cherry"];
+
+    /*     zz = (item, index) => {
+          console.log(item,index)
+        }
+    
+        fruits.forEach(zz) */
+    /* 
+        let tt = '';
+        fruits.forEach( ( i,j ) => {
+          tt += `${j} : ${i} \n`
+        })
+    
+    
+        console.log(tt);
+     */
+
+
+
+  </script>
+</body>
+
+</html>
