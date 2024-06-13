@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
+  <title>star</title>
+  <style>
+    #wrap {
+      /* width: 500px; */
+      height: 100vh;
+      margin: 0 auto;
+    }
 
-  <script></script>
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <h1>star</h1>
+    <p></p>
+  </div>
+
+  <script>
+    const $p = document.querySelector('p');
+    let num = 25;
+    for (let i = 0; i <= num; i++) {
+      let blnk = '';
+      let star = '';
+      for(let k=num; k>=i; k--){
+        blnk += "\u00a0"; // DOM 공백 삽입
+      }
+      for (let j = 0; j <= i*2; j++) {
+        star += '*';
+      }
+      $p.innerHTML += (blnk + star + '<br>');
+    }
+
+
+ 
+
+  </script>
 </body>
+
 </html>
