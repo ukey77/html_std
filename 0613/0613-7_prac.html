@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #imgBox {
+      width: 500px;
+      border: 5px double pink;
+      height: 500px;
+    }
+
+    img {
+      vertical-align: top;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <section id="imgBox">
+      <!-- 이미지넣는곳 -->
+    </section>
+  </div>
+  <div id="season">
+    <button type="button">1번</button>
+    <button type="button">2번</button>
+    <button type="button">3번</button>
+    <button type="button">4번</button>
+    <button type="button">5번</button>
+    <button type="button">6번</button>
+    <button type="button" id="front">앞으로</button>
+    <button type="button" id="back">뒤로</button>
+  </div>
+
+  <script>
+    const imgBox = document.querySelector('#imgBox');
+
+    const imges = [];
+    for (let i = 0; i <= 5; i++) {
+      imges.push(`<img src="../imges/${i + 1}.jpg" alt="숫자">`);
+      imgBox.innerHTML += imges[i];
+    }
+
+    const btnAll = document.querySelectorAll('button');
+    const imgAll = document.querySelectorAll('img');
+
+    // 모두숨기기
+    hideImg = () => {
+      imgAll.forEach(function (i, j) {
+        i.style.display = 'none'
+      });
+    };
+
+    // 클릭하면 모두 안보이고-> 해당번호만 보임
+    btnAll.forEach((i, j) => {
+      if (j <= 5) {
+        i.addEventListener("click", () => {
+          hideImg();
+          imgAll[j].style.display = 'inline';
+        });
+      }
+
+    });
+
+
+
+    // 앞으로
+    // 버튼을 누르면 순차적으로 이미지를 선택한다
+    // 버튼숫자가 늘어나는 만큼 이미지도 늘어난다
+    // 특정버튼임
+
+
+    const front = document.getElementById('front');
+
+    let num = 0;
+    front.addEventListener("click", () => move());
+
+    move = () => {
+            imgAll[num].style.opacity = 0.3;
+      num++;
+      if (num == imgAll.length) {
+        num=0;
+
+      }
+      imgAll[num].style.opacity = 1;
+    }
+
+    
+  </script>
+</body>
+
+</html>
