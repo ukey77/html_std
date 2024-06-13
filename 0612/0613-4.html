@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>봄 여름 가을 겨울</title>
+  <style>
+    #wrap {
+      width: 100%;
+      height: 100vh;
+      text-align: center;
+    }
+
+    #imgBox {
+      width: 500px;
+      height: 600px;
+      /* border: 5px double skyblue; */
+      margin: 0 auto;
+    }
+
+    img {
+      vertical-align: top;
+      display: inline;
+      /* border: 1px solid red; */
+    }
+
+    #season {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    button {
+      background-color: rgb(219, 255, 199);
+      border: 2px solid green;
+      box-shadow: 2px 3px 3px #555555a9;
+      border-radius: 5px;
+      width: 100px;
+      padding: 10px 0;
+      transition: 0.3s;
+      font-size: 1.1rem;
+    }
+
+    button:hover {
+      background-color: rgb(39, 111, 0);
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <h1>봄 여름 가을 겨울</h1>
+    <div id="season">
+      <section id="imgBox">
+        <!-- 이미지 추가 -->
+      </section>
+      <button type="button">봄🌼</button>
+      <button type="button">여름🌊</button>
+      <button type="button">가을🌾</button>
+      <button type="button">겨울⛄</button>
+    </div>
+
+  </div>
+</body>
+<script>
+
+  let imges = [
+    "../imges/spring.png",
+    "../imges/summer_04.png",
+    "../imges/autumn.png",
+    "../imges/winter.png"];
+
+  const imgBox = document.querySelector('#imgBox'); // div
+  const allBtn = document.querySelectorAll('button'); // 모든 버튼
+
+
+  // imgBox에 4계절 이미지 추가
+  imges.forEach((i) => {
+    imgBox.innerHTML += `<img src= ${i} >`
+  })
+
+  const allImg = document.querySelectorAll('img');
+
+  // 모두 숨기기
+    function hideImg() {
+      allImg.forEach(i => {
+      i.style.display = 'none';
+    })
+  }
+
+  // 클릭하면 모두 숨기고 해당 요소만 보이게
+  allBtn.forEach((i, j) => {
+    i.addEventListener("click", function () {
+      hideImg();
+      allImg[j].style.display = 'inline';
+    })
+  });
+
+
+
+
+
+</script>
+
+</html>
