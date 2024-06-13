@@ -83,19 +83,24 @@
   const allImg = document.querySelectorAll('img');
 
   // 모두 숨기기
-    function hideImg() {
+    const hideImg = () => {
       allImg.forEach(i => {
       i.style.display = 'none';
-    })
-  }
+    });
+  };
 
   // 클릭하면 모두 숨기고 해당 요소만 보이게
   allBtn.forEach((i, j) => {
     i.addEventListener("click", function () {
       hideImg();
       allImg[j].style.display = 'inline';
-    })
+    });
   });
+
+
+
+
+  
 
 
 

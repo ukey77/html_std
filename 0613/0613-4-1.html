@@ -67,18 +67,20 @@
     $button.forEach((i, j) => {//i는 버튼각각, j는 index
       i.addEventListener('click', () => {
         $img.forEach((b, c) => { //b는 이미지각각, c는 index
-          if (j === c) b.style.display = 'block';
-          else b.style.display = 'none';
+
+          if (j == 4) {
+            $img.forEach((b, c) => {
+              b.style.display = 'inline';
+            })
+          } else {
+            if (j === c) b.style.display = 'block';
+            else b.style.display = 'none';
+          }
+
         });
       });
     });
 
-    // reset버튼 누르면 모든 이미지 다시 보이게
-    $button[4].addEventListener("click",function(){
-      $img.forEach((b, c) => { //b는 이미지각각, c는 index
-        b.style.display='inline';
-    })
-    })
 
   </script>
 </body>
