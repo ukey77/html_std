@@ -107,18 +107,7 @@
         });
       });
 
-    // 모두 숨기기
-    function hideImg() {
-        imgAll.forEach((i) => {
-          i.style.display = 'none';
-        });
-      };
-    // 모두 보이기
-      function showImg() {
-        imgAll.forEach((i) => {
-          i.style.display = 'inline';
-        });
-      };
+
       // 미션
       imgAll.forEach((i, j) => {
         i.addEventListener("click", () => {
@@ -134,7 +123,18 @@
       });
 
 
-
+    // 모두 숨기기
+    function hideImg() {
+        imgAll.forEach(function(i){
+          i.style.display = 'none';
+        });
+      };
+    // 모두 보이기
+      function showImg() {
+        imgAll.forEach(function(i){
+          i.style.display = 'inline';
+        });
+      };
 
 
 
