@@ -36,6 +36,7 @@
   <section id="layout">
     <!-- <h1>차례대로 이미지 나타내기</h1> -->
     <h2>여기</h2>
+    <h2></h2>
     <img src="../imges/1.jpg" alt="숫자">
     <img src="../imges/2.jpg" alt="숫자">
     <img src="../imges/3.jpg" alt="숫자">
@@ -61,51 +62,68 @@
     //   index = (index + 1) % $imgs.length; // 다음 이미지 인덱스로 이동
     // }, 2000);
 
-    const $h2 = document.querySelector('h2');
+    const $h2 = document.querySelectorAll('h2');
 
-    // let x = 1;
-    // setInterval(() => {
-    //   x++
-    //   let y = x % 6;
-    //   $h2.innerHTML = '';
-    //   for (let i = 1; i <= y; i++) {
-    //     $h2.innerHTML += i + '\t'; 
-    //   }
-    // }, 1000);
+    //방법1
+       let x = 1;
+        setInterval(() => {
+          x++
+          let y = x % 6;
+          $h2[0].innerHTML = '';
+          for (let i = 1; i <= y; i++) {
+            $h2[0].innerHTML += i + '\t'; 
+          }
+        }, 1000);
+     
 
-
-    let count = 1;
+    // 방법2
+/*     let count = 1;
     setInterval(() => {
-      $h2.innerHTML += count + " ";
+      $h2[0].innerHTML += count + " ";
       if (count < 7)
         count++;
       else {
-        $h2.innerHTML = "";
+        $h2[0].innerHTML = "";
         count = 1;
       }
     }, 1000);
+ */
+    // 방법 3
+    /*     let c = 1;
+        setInterval(() => {
+          $h2.innerHTML += c;
+          c = (c + 1) % 7; // 2 3 4 5 6 0 1 2
+          if (c == 0) {
+            $h2.innerHTML = '';
+            c = 1;
+          }
+        }, 1000)
+     */
 
-    // let count = 1;
-    // setInterval(()=>{
-    //   $h2.innerHTML += count;
-    //   if(count < 7)
-    //     count ++;
-    //   else{
-    //     $h2.innerHTML='';
-    //     count=1
-    //   }
-    // },1000);
-
-let c = 1;
+    // 방법1 연습
+/*     let num = 0;
     setInterval(()=>{
-      $h2.innerHTML += c;
-      c=(c+1)% 7; // 2 3 4 5 6 0 1 2 
-      if(c==0){
-        $h2.innerHTML='';
-        c=1;
+      num++;
+      let nwNum = num % 6; // 1 2 3 4 5 0 1 2 3 4 5
+      $h2[0].innerHTML = ' ';
+      for(let i=1; i<=nwNum; i++){
+        $h2[0].innerHTML += i + ' ';
       }
-    },1000)
 
+    },1000); */
+
+    // 방법2 연습
+    /*     let i = 1;
+        setInterval(()=>{
+          $h2[1].innerHTML += i+ ' ';
+          if(i<6){
+            i++;
+          }else if(i==6){
+            $h2[1].innerHTML = '';
+            i = 1;
+          }
+        },1000)
+     */
 
   </script>
 </body>
