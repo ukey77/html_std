@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 차례대로 나타내기</title>
+    <style>
+        #layout {
+            width: 600px; height:800px;
+            margin: auto;
+            border-top: 10px solid red;
+            border-bottom: 10px solid red;
+            position: relative;
+            overflow: hidden;
+        }
+        img {
+            width:600px; height:800px;
+        }
+        .show {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+    </style>
+</head>
+<body>
+<section id="layout">
+    <h1>이미지 차례대로 나타내기</h1>
+</section>
+
+<script>
+    // 이미지 경로 배열 정의
+    const x = ["../imges/1.jpg", "../imges/2.jpg", "../imges/3.jpg", "../imges/4.jpg", "../imges/5.jpg"];
+
+    // 이미지를 담을 <section> 요소를 가져옴
+    const z = document.querySelector("#layout");
+
+    // 이미지 요소를 생성하여 차례대로 표시하는 함수
+    window.addEventListener('load', ()=> y() );
+    y =() =>{
+        x.forEach(( j , i ) => { //(각 값,인덱스)
+            setTimeout(() => {
+                // 새 이미지 요소 생성
+                /*z.innerHTML += `<img src='${j}' alt='꽃' class='show'>`;*/
+                
+                const m = document.createElement("img");
+                m.src = j ;
+                m.alt = "이미지";
+                m.classList.add("show");
+                
+                // 이미지가 차례대로 표시되도록 opacity 설정
+                setTimeout(() => {
+                    m.style.opacity = "1";
+                }, i * 1000);
+
+                // 이미지 표시 후 1초 후에 삭제
+                setTimeout(() => {
+                    m.style.opacity = "0";
+                    setTimeout(() => {
+                        m.remove();
+                    }, 1000);
+                }, (innerHeight + 1) * 1000);
+
+                // 이미지를 <section> 요소에 추가
+                z.appendChild(m );
+            }, i * 1000);
+        });
+    }   
+</script>
+
+</body>
+</html>

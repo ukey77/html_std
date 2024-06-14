@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>차례대로 이미지 서서히 나타내기</title>
+  <style>
+    #layout {
+      position: relative;
+      width: 600px;
+      height: 880px;
+      margin: 0 auto;
+      border-top: 10px solid pink;
+      border-bottom: 10px solid pink;
+      text-align: center;
+    }
+
+    img {
+      width: 600px;
+      height: 800px;
+      transition: 1s;
+
+    }
+
+    .show {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: 1s;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="layout">
+    <h1>차례대로 이미지 나타내기</h1>
+    <!-- <img src="../imges/1.jpg" alt="숫자"> -->
+  </section>
+
+  <!-- script -->
+  <script>
+
+    // 이미지 경로 배열
+    const x = ["../imges/1.jpg", "../imges/2.jpg", "../imges/3.jpg", "../imges/4.jpg", "../imges/5.jpg"];
+
+    const layout = document.querySelector('#layout');
+    window.addEventListener("load",()=>y());
+
+    y = () => {
+      x.forEach((j,i)=>{
+        setTimeout(()=>{
+          
+        });
+      });
+    };
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

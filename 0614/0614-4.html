@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>차례대로 이미지 서서히 나타내기</title>
+  <style>
+    #layout {
+      position: relative;
+      width: 600px;
+      height: 880px;
+      margin: 0 auto;
+      border-top: 10px solid pink;
+      border-bottom: 10px solid pink;
+      text-align: center;
+    }
+
+    img {
+      position: absolute;
+      width: 600px;
+      height: 800px;
+      transition: 1s;
+      left: 0;
+      top: 0;
+      opacity: 0;
+    }
+
+    .show {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="layout">
+    <!-- <h1>차례대로 이미지 나타내기</h1> -->
+    <h2>여기</h2>
+    <img src="../imges/1.jpg" alt="숫자">
+    <img src="../imges/2.jpg" alt="숫자">
+    <img src="../imges/3.jpg" alt="숫자">
+    <img src="../imges/4.jpg" alt="숫자">
+    <img src="../imges/5.jpg" alt="숫자">
+  </section>
+
+  <!-- script -->
+  <script>
+    const $imgs = document.querySelectorAll('img');
+
+
+    // let index = 0;
+
+    // setInterval(() => {
+    //   $imgs.forEach((i, j) => {
+    //     if (j === index) {
+    //       i.classList.add('show');
+    //     } else {
+    //       i.classList.remove('show');
+    //     }
+    //   });
+    //   index = (index + 1) % $imgs.length; // 다음 이미지 인덱스로 이동
+    // }, 2000);
+
+    const $h2 = document.querySelector('h2');
+
+    // let x = 1;
+    // setInterval(() => {
+    //   x++
+    //   let y = x % 6;
+    //   $h2.innerHTML = '';
+    //   for (let i = 1; i <= y; i++) {
+    //     $h2.innerHTML += i + '\t'; 
+    //   }
+    // }, 1000);
+
+
+    let count = 1;
+    setInterval(() => {
+      $h2.innerHTML += count + " ";
+      if (count < 7)
+        count++;
+      else {
+        $h2.innerHTML = "";
+        count = 1;
+      }
+    }, 1000);
+
+    // let count = 1;
+    // setInterval(()=>{
+    //   $h2.innerHTML += count;
+    //   if(count < 7)
+    //     count ++;
+    //   else{
+    //     $h2.innerHTML='';
+    //     count=1
+    //   }
+    // },1000);
+
+let c = 1;
+    setInterval(()=>{
+      $h2.innerHTML += c;
+      c=(c+1)% 7; // 2 3 4 5 6 0 1 2 
+      if(c==0){
+        $h2.innerHTML='';
+        c=1;
+      }
+    },1000)
+
+
+  </script>
+</body>
+
+</html>
