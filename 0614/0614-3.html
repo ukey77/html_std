@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>계절꽃 사진보기</title>
+  <style>
+    body {
+      background: rgb(255, 243, 253);
+    }
+
+    #layout {
+      max-width: 650px;
+      border-radius: 10px;
+      box-shadow: 3px 3px 10px #7a7a7a;
+      margin: 0 auto;
+      text-align: center;
+      background: #fff;
+    }
+
+    h2 {
+      /* border: 1px solid rgb(1, 71, 36); */
+      background: rgb(255, 213, 247);
+      padding: 4px 0;
+
+    }
+
+    #flower img {
+      width: 300px;
+      vertical-align: top;
+      margin: 10px;
+    }
+
+    button {
+      width: 100px;
+      padding: 5px 0;
+      margin-top: 15px;
+      background: rgb(255, 204, 0);
+      border: 0;
+      border-radius: 5px;
+      box-shadow: 2px 2px 6px rgba(46, 32, 0, 0.638);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: rgb(255, 111, 21);
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="layout">
+    <div id="btnAll">
+      <button type="button">봄🌼</button>
+      <button type="button">여름🌴</button>
+      <button type="button">가을🍂</button>
+      <button type="button">겨울🌺</button>
+      <button type="button">ALL👻</button>
+    </div>
+    <section id="flower">
+      <h2>계절별 꽃들</h2>
+      <!-- 배열방법으로 이미지가 추가될 부분 -->
+    </section>
+
+    <script>
+      const flower = document.querySelector('#flower');
+      const imges = [
+        "../imges/spring.png",
+        "../imges/summer_04.png",
+        "../imges/autumn.png",
+        "../imges/winter.png"
+      ];
+
+      imges.forEach((item) => {
+        flower.innerHTML += `<img src="${item}" alt="계절">`
+      });
+
+      const btnAll = document.querySelectorAll('button');
+      const imgAll = document.querySelectorAll('img');
+
+      const hideImg = () => {
+        imgAll.forEach((item) => {
+          item.style.display = 'none';
+        })
+      }
+                 
+      const showImg = () => {
+        imgAll.forEach((item) => {
+          item.style.display = 'inline';
+        })
+      }
+
+      btnAll.forEach((i, j) => {
+        i.addEventListener("click", () => {
+          if(j==4){
+            showImg();
+          }else{
+            hideImg();
+            imgAll[j].style.display = 'inline';
+          }
+          })
+      });
+
+
+
+
+    </script>
+  </div>
+</body>
+
+</html>
