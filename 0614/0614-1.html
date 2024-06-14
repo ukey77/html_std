@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>값 입력받아서 계산하기</title>
+  <style>
+    [id="unit"]{width: 100px;}
+    [id="count"]{width: 60px;}
+  </style>
+</head>
+
+<body>
+  <h1>계산하기</h1>
+  <form action="#" method="get"> <label for="unit">단가</label>
+    <input type="number" maxlength="5" id="unit">
+    *
+    <label for="count">개수</label>
+    <input type="number" id="count">
+    =
+    <input type="text" id="result" readonly>
+  </form>
+
+  <!-- script -->
+  <script>
+    const inputAll = document.querySelectorAll('input');
+
+    // 글자입력수 제한하기
+
+    inputAll.forEach((i) => { // i = 자체요소
+      i.addEventListener("input", () => {
+        if (i.value.length > 5 && i.id == "unit") {
+          alert('5자리 초과 불가');
+          i.value = i.value.slice(0,5);
+        } else if(i.value.length > 3 && i.id == "count") {
+          alert('3자리 초과 불가');
+          i.value = i.value.slice(0,3);
+        };
+      })
+    });
+
+
+
+    // 글입력감지해서 입력숫자계산
+    inputAll[1].addEventListener("keypress", (event) => y(event));
+
+    y = (event) => {
+      if (event.keyCode == 13) {
+        // alert('333');
+        const z = inputAll[0].value * inputAll[1].value
+        inputAll[2].value = z.toLocaleString();
+      }
+    }
+
+    // 엔터키
+    //key === 'Enter'
+    //e.keyCode == 13
+
+
+  </script>
+</body>
+
+</html>
