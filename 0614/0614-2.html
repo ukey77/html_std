@@ -32,8 +32,8 @@
       margin: 10px;
     }
 
-    #flower img.big{
-      width: 80% !important; 
+    #flower img.big {
+      width: 80% !important;
     }
 
     button {
@@ -67,6 +67,9 @@
       <h2>계절별 꽃들</h2>
       <!-- 배열방법으로 이미지가 추가될 부분 -->
     </section>
+    <div id="popup">
+
+    </div>
 
     <script>
       const flower = document.querySelector('#flower');
@@ -85,28 +88,56 @@
       const imgAll = document.querySelectorAll('img');
 
 
-       btnAll.forEach((i, j) => {
+      btnAll.forEach((i, j) => {
         i.addEventListener("click", () => {
           imgAll.forEach((x, y) => {
             if (j == y) {
               x.style.display = 'inline'// 하나의 이미지가 선택
               x.classList.add("big");
-            } 
+            }
             else if (j == 4) {
               x.style.display = 'inline' // 이미지 4개 선택
               x.classList.remove("big");
-              } 
+              // x.style.width = 300 + 'px';
+            }
             else {
               x.style.display = 'none' // if문을 통과하지 못한 나머지이미지들 숨김
             };
           });
         });
-      }); 
-      
+      });
+
+    // 모두 숨기기
+    function hideImg() {
+        imgAll.forEach((i) => {
+          i.style.display = 'none';
+        });
+      };
+    // 모두 보이기
+      function showImg() {
+        imgAll.forEach((i) => {
+          i.style.display = 'inline';
+        });
+      };
+      // 미션
+      imgAll.forEach((i, j) => {
+        i.addEventListener("click", () => {
+          if(i.classList.contains('big')){
+            showImg();
+            i.classList.remove('big')
+          }else{
+            hideImg()
+            i.style.display='inline';
+            i.classList.add('big')
+          }
+        });
+      });
 
 
 
-     
+
+
+
     </script>
   </div>
 </body>
