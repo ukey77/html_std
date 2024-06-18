@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 얕은 복사 (shallow copy)
+
+      // let source = ['사과', '바나나', '딸기'];
+      // let fruits = source; // 복사가 아닌 주소를 참조
+      // fruits[0] = '파인애플';
+      // console.log(source);
+      // console.log(fruits);
+
+      // fruits = *source
+
+      // 깊은 복사 (deep copy)
+
+      // let source = ['사과', '바나나', '딸기'];
+      // let fruits = [...source];
+      // fruits[0] = '파인애플';
+      // console.log(source);
+      // console.log(fruits);
+
+      // rest
+      // print('a', 'b', 'c');
+      // function print(value1, value2, value3) {
+      //   console.log(value1);
+      //   console.log(value2);
+      //   console.log(value3);
+      // }
+      print('a', 'b', 'c', 'd');
+
+      function print(...value) {
+        console.log(value);
+        console.log(value.length);
+        console.log(value.indexOf('g')); // 인덱스 반환
+        console.log(value.indexOf('g')); // 해당 요소 없을 시 -1로 반환
+      }
+    </script>
+  </body>
+</html>
