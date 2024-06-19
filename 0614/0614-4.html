@@ -49,31 +49,37 @@
     const $imgs = document.querySelectorAll('img');
 
 
-    // let index = 0;
+    let index = 0;
 
-    // setInterval(() => {
-    //   $imgs.forEach((i, j) => {
-    //     if (j === index) {
-    //       i.classList.add('show');
-    //     } else {
-    //       i.classList.remove('show');
-    //     }
-    //   });
-    //   index = (index + 1) % $imgs.length; // 다음 이미지 인덱스로 이동
-    // }, 2000);
+    setInterval(() => {
+      $imgs.forEach((i, j) => {
+        if (j === index) {
+          i.classList.add('show');
+        } else {
+          i.classList.remove('show');
+        }
+      });
+      index = (index + 1) % $imgs.length; // 다음 이미지 인덱스로 이동
+    }, 2000);
 
     const $h2 = document.querySelectorAll('h2');
 
     //방법1
        let x = 1;
         setInterval(() => {
-          x++
-          let y = x % 6;
+          x++;
+          let y = x % 6; //  012345 012345
           $h2[0].innerHTML = '';
           for (let i = 1; i <= y; i++) {
             $h2[0].innerHTML += i + '\t'; 
           }
         }, 1000);
+
+        
+
+
+
+
      
 
     // 방법2

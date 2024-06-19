@@ -3,23 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>다이아몬드 모양</title>
+  <style>
+    body {
+      font-family: monospace;
+    }
+  </style>
 </head>
 <body>
+    <div></div>
+
   <script>
+    let $div = document.querySelector('div');
+    let num = 5;
 
-var num = 0;
+    // 상단 삼각형
+    for (let i = 0; i < num; i++) {
+      let blnk = '';
+      let star = '';
 
-    for(let i=0;i<=5;i++){
-      num+=i;
-      console.log(num);
-      
+      for (let j = num - 1; j > i; j--) {
+        blnk += '-';
+      }
+      for (let k = 0; k < 2 * i + 1; k++) {
+        star += '*';
+      }
+      $div.innerHTML += blnk + star + '<br>';
     }
 
+    // 하단 삼각형
+    for (let i = num - 1; i >= 0; i--) {
+      let blnk = '';
+      let star = '';
 
-
-
-
+      for (let j = num - 1; j > i; j--) {
+        blnk += '-';
+      }
+      for (let k = 0; k < 2 * i + 1; k++) {
+        star += '*';
+      }
+      $div.innerHTML += blnk + star + '<br>';
+    }
   </script>
 </body>
 </html>
