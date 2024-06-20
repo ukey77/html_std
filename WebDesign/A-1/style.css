@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+img {
+  width: 100%;
+  display: block;
+}
+/* start */
+#wrap {
+  width: 100%;
+  height: 700px;
+}
+/* header */
+#header {
+  width: 100%;
+  display: flex;
+}
+/* header > logo */
+.mainLogo {
+  width: 20%;
+  height: 100px;
+  background: #dbd5e4;
+}
+.mainLogo a {
+  text-align: center;
+  margin: 25px 0;
+  border: 1px solid red;
+}
+/* header > nav */
+.nav {
+  position: relative;
+  width: 80%;
+  height: 100px;
+  background: #fcf2ff;
+  display: flex;
+  justify-content: right;
+  z-index: 1;
+}
+.nav > ul {
+  display: flex;
+  margin-top: 40px;
+  margin-right: 20px;
+}
+.nav > ul > li {
+  text-align: center;
+}
+.nav > ul > li > a {
+  width: 150px;
+  padding: 10px;
+  background: #c8b9df;
+  transition: 0.1s;
+}
+.nav > ul > li > a:hover {
+  background: #b1a3c5;
+}
+.nav > ul > li > ul {
+  display: none;
+}
+
+.nav > ul > li > ul > li > a {
+  padding: 10px;
+  background: #a192b8;
+  color: #fff;
+}
+.nav > ul > li > ul > li > a:hover {
+  background: #cfc4e0;
+  color: #000;
+}
+/* slider */
+#slider {
+  width: 100%;
+  height: 300px;
+  background: #a0a0a0;
+  overflow: hidden;
+}
+.sliderWrap {
+  display: flex;
+  width: 400%;
+  height: 100%;
+  /* transition: 0.5s; */
+}
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.slider img {
+  width: 100%;
+  height: 100%;
+}
+.slider h2 {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%);
+  background: rgba(149, 204, 255, 0.749);
+  padding: 20px;
+  width: 50%;
+  text-align: center;
+  border-radius: 20px;
+}
+/* contents */
+#contents {
+  width: 100%;
+  display: flex;
+}
+#info {
+  width: 33.3333%;
+  height: 200px;
+  background: #f2f2f2;
+}
+#banner {
+  width: 33.3333%;
+  height: 200px;
+  background: #838383;
+}
+#link {
+  width: 33.3333%;
+  height: 200px;
+  background: #c0c0c0;
+}
+
+/* footer */
+#footer {
+  width: 100%;
+  display: flex;
+}
+.ftLogo {
+  width: 20%;
+  height: 100px;
+  background: #9d9d9d;
+}
+.copyright {
+  width: 60%;
+  height: 100px;
+  background: #e2e2e2;
+}
+.social {
+  width: 20%;
+  height: 100px;
+  background: #9d9d9d;
+}

@@ -12,19 +12,19 @@ let total = 5;
 // }
 
 // // 2번예제
-// let alph = ['A', 'B', 'C', 'D', 'E'];
-// let alLen = alph.length;
+let alph = ['A', 'B', 'C', 'D', 'E'];
+let alLen = alph.length;
 
-// for (let i = 0; i < alLen; i++) {
-//   let result = '';
-//   for (let k = alLen; k > i; k--) {
-//     result += ' ';
-//   }
-//   for (let j = 0; j <= i * 2; j++) {
-//     result += alph[i];
-//   }
-//   console.log(result);
-// }
+for (let i = 0; i < alLen; i++) {
+  let result = '';
+  for (let k = alLen; k > i; k--) {
+    result += ' ';
+  }
+  for (let j = 0; j <= i * 2; j++) {
+    result += alph[i];
+  }
+  console.log(result);
+}
 
 /*
  *********
@@ -58,33 +58,33 @@ let total = 5;
 
 // 다이아몬드
 
-// for (let i = 0; i < total; i++) {
-//   let star = '';
-//   for (let k = total; k >= i + 1; k--) {
-//     star += '*';
-//   }
-//   for (let j = 0; j <= i * 2; j++) {
-//     star += '•';
-//   }
-//   for (let k = total; k >= i + 1; k--) {
-//     star += '*';
-//   }
-//   console.log(star);
-// }
+for (let i = 0; i < total; i++) {
+  let star = '';
+  for (let k = total; k >= i + 1; k--) {
+    star += '*';
+  }
+  for (let j = 0; j <= i * 2; j++) {
+    star += '•';
+  }
+  for (let k = total; k >= i + 1; k--) {
+    star += '*';
+  }
+  console.log(star);
+}
 
-// for (let i = total - 1; i > 0; i--) {
-//   let star = '';
-//   for (let k = total; k >= i; k--) {
-//     star += '*';
-//   }
-//   for (let j = 1; j < i * 2; j++) {
-//     star += '•';
-//   }
-//   for (let k = total; k >= i; k--) {
-//     star += '*';
-//   }
-//   console.log(star);
-// }
+for (let i = total - 1; i > 0; i--) {
+  let star = '';
+  for (let k = total; k >= i; k--) {
+    star += '*';
+  }
+  for (let j = 1; j < i * 2; j++) {
+    star += '•';
+  }
+  for (let k = total; k >= i; k--) {
+    star += '*';
+  }
+  console.log(star);
+}
 
 //'hello world' 뒤집기
 
