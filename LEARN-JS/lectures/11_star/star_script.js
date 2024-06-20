@@ -109,17 +109,3 @@ for (let i = num - 1; i >= 1; i--) {
   }
   document.write(blnk + star + '<br>');
 }
-
-document.write('—––——–——–' + '<br>');
-
-for (let i = 1; i <= num; i++) {
-  let star = '';
-  let blnk = '';
-  for (let j = 1; j <= i * 2 - 1; j++) {
-    star += '*';
-  }
-  for (let k = num; k >= i; k--) {
-    blnk += '\u00a0';
-  }
-  document.write(blnk + star + '<br>');
-}
