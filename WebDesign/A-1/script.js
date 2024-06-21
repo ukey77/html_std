@@ -22,20 +22,24 @@ ul.addEventListener('mouseleave', function () {
 });
 
 // slide img
-let num = 0;
 const sliderWrap = document.querySelector('.sliderWrap');
 const sliderCopy = document
   .querySelector('.sliderWrap')
   .children[0].cloneNode(true);
 sliderWrap.appendChild(sliderCopy);
+console.log(sliderWrap);
 
+let num = 0;
 setInterval(function () {
-  let repeatNum = num % 4; // 0 1 2 3
-
-  sliderWrap.style.marginLeft = repeatNum * -100 + '%';
-
-  if (repeatNum === 3) {
-    repeatNum = 0;
-  }
   num++;
-}, 2000);
+
+  sliderWrap.style.marginLeft = -num * 100 + '%';
+  sliderWrap.style.transition = 1 + 's';
+  if (num === 3) {
+    setTimeout(function () {
+      num = 0;
+      sliderWrap.style.transition = 0 + 's';
+      sliderWrap.style.marginLeft = 0;
+    }, 2000);
+  }
+}, 3000);

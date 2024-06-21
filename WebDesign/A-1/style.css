@@ -83,7 +83,7 @@ img {
   width: 100%;
   height: 300px;
   background: #a0a0a0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .sliderWrap {
   display: flex;
