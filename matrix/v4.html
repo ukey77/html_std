@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Matrix Calculator</title>
+    <!-- icon -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <!-- fontawesome-->
+    <link rel="stylesheet" href="../../build/css/all.css" />
+    <link rel="stylesheet" href="../../build/css/v5-font-face.css" />
+    <link rel="stylesheet" href="../../build/css/fontawesome.min.css" />
+    <!-- Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:700|Muli:400,700|Poppins:400,600,700"
+      rel="stylesheet"
+    />
+    <!-- webfont - Oleo Script-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        /* background: linear-gradient(to left, #a8ede9de 0%, #fed6e3e3 100%); */
+        /* background: #e6f4f1; */
+        /* background-image: url('../imges/background.jpg'); */
+        background-repeat: no-repeat;
+        background-size: 100% 100vh;
+        background-image: linear-gradient(
+            rgba(98, 161, 255, 0.3),
+            rgba(133, 117, 255, 0.3)
+          ),
+          url('../imges/background.jpg');
+      }
+
+      .wrap {
+        width: 1240px;
+        height: 100vh;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .headerBox {
+        margin: 0 auto;
+        position: relative;
+        width: 75%;
+        height: 150px;
+        /* border: 1px solid orange; */
+        padding-top: 30px;
+        /* border: 1px solid red; */
+        /* background: #d5dbf3; */
+        border-radius: 0 0 100px 100px;
+      }
+
+      .headLineBar {
+        position: absolute;
+        left: 50%;
+        top: 85%;
+        transform: translate(-50%);
+        width: 1150px;
+        height: 5px;
+        /* border: 1px solid red; */
+        margin: 0 auto;
+        /* background: #c3d2eb; */
+        border-radius: 10px;
+      }
+
+      .pageTitle {
+        font-size: 80px;
+        text-align: center;
+        /* color: #3068b1; */
+        font-weight: 900;
+        font-style: normal;
+        font-family: 'Oleo Script', 'Noto Sans KR', sans-serif;
+        /* border: 1px solid red; */
+      }
+      .boxWrap {
+        display: flex;
+        justify-content: space-between;
+        /* border: 1px solid red; */
+      }
+
+      /* matrixCont */
+      .matrixCont {
+        width: 420px;
+        height: 670px;
+        background: #ffffff93;
+        margin: 14px;
+        border-radius: 14px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+
+      .titleBox {
+        text-align: center;
+        padding: 10px;
+      }
+
+      .numberBox {
+        text-align: center;
+        padding: 10px;
+      }
+
+      .BtnBox {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 70px;
+        padding: 10px 0 0 0;
+      }
+
+      .BtnBox .printBtn {
+        width: 105px;
+        height: 40px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #fff;
+        border-radius: 20px;
+        background: #d2b6f2;
+        background-repeat: no-repeat;
+        transition: 0.2s;
+        box-shadow: 0px 3px 0px 0px #a7a3a3;
+        border: 0px;
+        transition: 0.3s;
+      }
+      .printBtn:active {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      .printBtn:hover {
+        background-color: #b0c4de;
+      }
+      .inputTxt {
+        width: 90px;
+        height: 70px;
+        font-size: 30px;
+        border: 0;
+        border-radius: 8px;
+        background-color: #f1f0f5ab;
+        color: #454545;
+        text-align: center;
+        line-height: 90px;
+        box-shadow: inset 5px 5px 5px #e0e0e081,
+          inset -5px -5px 0.5rem #ffffffbb;
+      }
+      .subContBox {
+        text-align: center;
+        margin-top: 15px;
+        width: 100%;
+        height: 400px;
+        margin: 0 auto;
+      }
+      .matrixCell {
+        width: 38px;
+        height: 38px;
+        border-radius: 5px;
+        margin: 2px;
+        outline: 0;
+        text-align: right;
+        border: 1px solid #9d9d9d;
+      }
+      .matrixCell:hover {
+        border: 1px solid #323232;
+        background: #bc03840c;
+      }
+      .matrixSubTitle {
+        color: #9b9b9b;
+        /* border: 0.13rem solid #9eadbd; */
+        display: inline-block;
+        padding: 3px 15px;
+        /* border-radius: 20px; */
+        /* background: linear-gradient(to bottom, #fff 10%, #dbdbdb00); */
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <section class="headerBox">
+        <h1 class="pageTitle">
+          <!-- Matrix Calculator -->
+          <img src="../imges/title.png" />
+        </h1>
+        <div class="headLineBar"></div>
+      </section>
+
+      <div class="boxWrap">
+        <!-- A BOX -->
+        <section class="matrixCont Abox">
+          <article class="titleBox">
+            <h2 class="matrixSubTitle">Matrix<span> A</span></h2>
+          </article>
+          <section class="numberBox">
+            <input
+              id="frstInputA"
+              class="inputTxt"
+              type="number"
+              min="1"
+              max="9"
+              required
+            />
+            <i class="xi-close"></i>
+            <input
+              id="scndInputB"
+              class="inputTxt"
+              type="number"
+              min="1"
+              max="9"
+              required
+            />
+          </section>
+          <section class="BtnBox">
+            <article class="OutBtnBox">
+              <button id="outMatrix" class="printBtn">OUTPUT</button>
+            </article>
+            <article class="RandBtnBox">
+              <button id="randomMatrix" class="printBtn">RANDOM</button>
+            </article>
+            <article class="RsetBtnBox">
+              <button id="rsetMatrix" class="printBtn">RESET</button>
+            </article>
+          </section>
+          <section id="matrixArea" class="subContBox"></section>
+        </section>
+        <!-- //A BOX -->
+
+        <!-- A Box copy본 -->
+        <section class="matrixCont Bbox">
+          <article class="titleBox">
+            <h2 class="matrixSubTitle">Matrix<span> B</span></h2>
+          </article>
+          <section class="numberBox">
+            <input
+              id="frstInputA"
+              class="inputTxt"
+              type="number"
+              min="1"
+              max="9"
+              required
+            />
+            <i class="xi-close"></i>
+            <input
+              id="scndInputB"
+              class="inputTxt"
+              type="number"
+              min="1"
+              max="9"
+              required
+            />
+          </section>
+          <section class="BtnBox">
+            <article class="OutBtnBox">
+              <button id="" class="printBtn">OUTPUT</button>
+            </article>
+            <article class="RandBtnBox">
+              <button id="" class="printBtn">RANDOM</button>
+            </article>
+            <article class="RsetBtnBox">
+              <button id="" class="printBtn">RESET</button>
+            </article>
+          </section>
+          <section id="" class="subContBox"></section>
+        </section>
+
+        <!-- result -->
+        <section class="matrixCont ResultBox">
+          <article class="titleBox">
+            <h2 class="matrixSubTitle">Result</h2>
+          </article>
+          <section class="BtnBox">
+            <article class="OutBtnBox">
+              <button class="printBtn"><i class="xi-plus xi-1x"></i></button>
+            </article>
+            <article class="RandBtnBox">
+              <button class="printBtn"><i class="xi-minus xi-1x"></i></button>
+            </article>
+            <article class="RsetBtnBox">
+              <button class="printBtn"><i class="xi-close xi-1x"></i></button>
+            </article>
+          </section>
+          <section class="subContBox"></section>
+        </section>
+      </div>
+    </div>
+
+    <!-- script -->
+    <script>
+      const A_Matrix = {
+        matrixX: 0,
+        matrixY: 0,
+        matrixArea: null,
+      };
+
+      document
+        .querySelector('#outMatrix')
+        .addEventListener('click', function (event) {
+          this.matrixY = Number(document.querySelector('#frstInputA').value);
+          this.matrixX = Number(document.querySelector('#scndInputB').value);
+          this.matrixArea = document.getElementById('matrixArea');
+          this.matrixArea.style.width = 44 * this.matrixX + 'px';
+          this.matrixArea.innerHTML = '';
+          for (let y = 0; y < this.matrixY; y++) {
+            for (let x = 0; x < this.matrixX; x++) {
+              this.matrixArea.innerHTML +=
+                '<input id="cell' +
+                y +
+                x +
+                '" class="matrixCell" type="number">';
+            }
+          }
+        });
+    </script>
+  </body>
+</html>

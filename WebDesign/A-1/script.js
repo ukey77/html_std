@@ -23,11 +23,8 @@ ul.addEventListener('mouseleave', function () {
 
 // slide img
 const sliderWrap = document.querySelector('.sliderWrap');
-const sliderCopy = document
-  .querySelector('.sliderWrap')
-  .children[0].cloneNode(true);
+const sliderCopy = sliderWrap.children[0].cloneNode(true);
 sliderWrap.appendChild(sliderCopy);
-console.log(sliderWrap);
 
 let num = 0;
 setInterval(function () {
